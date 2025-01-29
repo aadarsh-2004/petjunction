@@ -1,108 +1,230 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X, ChevronDown, Home, Store, Dog, HeadphonesIcon } from 'lucide-react';
 import logo from '../assets/petjunction.png';
-import { IoIosArrowDown } from 'react-icons/io';
-import { IoHomeOutline } from 'react-icons/io5';
-import { BsShop } from 'react-icons/bs';
-import { FaBars } from 'react-icons/fa';
-import {Link} from 'react-router-dom'
+
+const services = [
+  {
+    title: "Dog Walking",
+    description: "Daily walks and exercise",
+    icon: "🦮"
+  },
+  {
+    title: "Dog Grooming",
+    description: "Professional grooming services",
+    icon: "✂️"
+  },
+  {
+    title: "Dog Boarding",
+    description: "Comfortable overnight stays",
+    icon: "🏠"
+  },
+  {
+    title: "Dog Sitting",
+    description: "In-home pet care",
+    icon: "💝"
+  }
+];
+
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const toggleServicesMenu = () => {
-    setIsServicesOpen(!isServicesOpen);
+  const toggleDropdown = (menu) => {
+    setActiveDropdown(activeDropdown === menu ? null : menu);
   };
 
   return (
-    <div className="navbar border-b-2 bg-white backdrop-blur-3xl border-none shadow-2xl pl-6   rounded-b-4xl flex justify-between items-center fixed top-0 left-2 right-2 md:left-30 md:right-30 z-80">
-      <img className="w-25 h-25 " src={logo} alt="PetJunction Logo" />
-
-      {/* Mobile Hamburger Icon */}
-      <div className="md:hidden flex items-center cursor-pointer" onClick={toggleMenu}>
-        <FaBars className="text-2xl text-[#f83e2d]" />
-      </div>
-
-      {/* Navigation Links for Desktop */}
-      <div className="navoptions font-medium text-lg font-sans text-black md:flex md:space-x-14 md:mr-12 md:cursor-pointer hidden">
-        <ul className="flex space-x-14">
-          <Link to="/" >
-            <li className="flex items-center gap-1">
-              <IoHomeOutline className="text-[#f83e2d]" /> Home
-            </li>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+      <div className="container mx-auto">
+        <nav className="flex items-center justify-between h-20 px-4">
+          {/* Logo */}
+          <Link to="/" className="flex-shrink-0">
+            <img 
+              src={logo} 
+              alt="PetJunction"
+              className="h-16 w-auto"
+            />
           </Link>
 
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            <Link 
+              to="/" 
+              className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-cyan-500 transition-colors"
+            >
+              <Home className="w-4 h-4" />
+              Home
+            </Link>
 
-          <Link to="/shop">
-          <li className="flex items-center gap-2">
-            <BsShop className="text-[#f83e2d]" /> Shop
-          </li>
-          </Link>
+            <Link 
+              to="/shop" 
+              className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-cyan-500 transition-colors"
+            >
+              <Store className="w-4 h-4" />
+              Shop
+            </Link>
 
+            {/* Services Dropdown */}
+            <div className="relative group">
+              <button
+                onClick={() => toggleDropdown('services')}
+                className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-cyan-500 transition-colors"
+              >
+                <Dog className="w-4 h-4" />
+                Services
+                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'services' ? 'rotate-180' : ''}`} />
+              </button>
 
-          <li className="relative flex items-center gap-1 cursor-pointer"  onClick={toggleServicesMenu}>
-            Pet Services
-            <IoIosArrowDown className="text-lg text-[#f83e2d]" />
-            {isServicesOpen && (
-              <div className="absolute flex bg-white items-center justify-evenly shadow-2xl right-0 space-x-30 top-15    rounded-xl w-18/2  z-20 mt-2 p-8 ">
-                <div className="flex-col items-center justify-center cursor-pointer">
-                  <img src="https://www.petsfolio.com/in/wp-content/themes/petsfolio/images/service3.svg" className='w-10 h-10 ml-5' alt="" />
-                  
-                  <h3 className='text-[14px] '>Dog Walking</h3>  
+              {activeDropdown === 'services' && (
+                <div className="absolute top-full right-0 mt-2 w-[480px] bg-white rounded-xl shadow-lg border p-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    {services.map((service) => (
+                      <div
+                        key={service.title}
+                        className="flex items-start gap-3 p-3 rounded-xl hover:bg-cyan-50 transition-colors cursor-pointer"
+                      >
+                        <span className="text-2xl">{service.icon}</span>
+                        <div>
+                          <h3 className="font-medium text-sm">{service.title}</h3>
+                          <p className="text-xs text-gray-500 mt-1">{service.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex-col items-center gap-1 cursor-pointer">
-                
-                <img src="https://www.petsfolio.com/in/wp-content/themes/petsfolio/images/service4.svg" className='w-10 h-10 ml-5' alt="" />
-                  
-                  <h3 className='text-[14px]'>Dog Gromming</h3>
-                  
-                </div>
+              )}
+            </div>
 
-                <div className="flex-col items-center gap-1 cursor-pointer">
-                <img src="https://www.petsfolio.com/in/wp-content/themes/petsfolio/images/service5.svg" className='w-10 h-10 ml-5' alt="" />
-                  <h3 className='text-[14px]'>Dog Boarding</h3>     
+            {/* Support Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => toggleDropdown('support')}
+                className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-cyan-500 transition-colors"
+              >
+                <HeadphonesIcon className="w-4 h-4" />
+                Support
+                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'support' ? 'rotate-180' : ''}`} />
+              </button>
+
+              {activeDropdown === 'support' && (
+                <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border">
+                  <div className="py-2">
+                    <Link to="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50">
+                      Contact Us
+                    </Link>
+                    <Link to="/faq" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50">
+                      FAQ
+                    </Link>
+                    <Link to="/help" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50">
+                      Help Center
+                    </Link>
+                  </div>
                 </div>
-                <div className="flex-col items-center  gap-1 cursor-pointer">
-                <img src="https://www.petsfolio.com/in/wp-content/themes/petsfolio/images/service6.svg" className='w-10 h-10 ml-5' alt="" />
-                  
-                  <h3 className='text-[14px]'>Dog Sitting</h3>
-                
-                    
-                </div>
-              </div>
+              )}
+            </div>
+
+            {/* Call to Action Button */}
+            <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md transition-shadow">
+              Book Now
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 hover:bg-cyan-50 rounded-lg"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-5 h-5 text-cyan-500" />
+            ) : (
+              <Menu className="w-5 h-5 text-cyan-500" />
             )}
-          </li>
+          </button>
+        </nav>
 
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden py-4 px-4 border-t">
+            <div className="flex flex-col space-y-4">
+              <Link 
+                to="/" 
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-cyan-50 rounded-lg"
+              >
+                <Home className="w-4 h-4" />
+                Home
+              </Link>
 
+              <Link 
+                to="/shop" 
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-cyan-50 rounded-lg"
+              >
+                <Store className="w-4 h-4" />
+                Shop
+              </Link>
 
+              <div className="space-y-2">
+                <button
+                  onClick={() => toggleDropdown('mobileServices')}
+                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-cyan-50 rounded-lg w-full"
+                >
+                  <Dog className="w-4 h-4" />
+                  Services
+                  <ChevronDown className={`w-4 h-4 ml-auto transition-transform ${activeDropdown === 'mobileServices' ? 'rotate-180' : ''}`} />
+                </button>
 
-          <li className="relative flex items-center gap-1 cursor-pointer">
-            Support
-            <IoIosArrowDown className="text-lg text-[#f83e2d]" />
-          </li>
-        </ul>
+                {activeDropdown === 'mobileServices' && (
+                  <div className="pl-4 space-y-2">
+                    {services.map((service) => (
+                      <div
+                        key={service.title}
+                        className="flex items-start gap-3 p-3 rounded-lg hover:bg-cyan-50"
+                      >
+                        <span className="text-xl">{service.icon}</span>
+                        <div>
+                          <h3 className="font-medium text-sm">{service.title}</h3>
+                          <p className="text-xs text-gray-500">{service.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                <button
+                  onClick={() => toggleDropdown('mobileSupport')}
+                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-cyan-50 rounded-lg w-full"
+                >
+                  <HeadphonesIcon className="w-4 h-4" />
+                  Support
+                  <ChevronDown className={`w-4 h-4 ml-auto transition-transform ${activeDropdown === 'mobileSupport' ? 'rotate-180' : ''}`} />
+                </button>
+
+                {activeDropdown === 'mobileSupport' && (
+                  <div className="pl-4 space-y-2">
+                    <Link to="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50 rounded-lg">
+                      Contact Us
+                    </Link>
+                    <Link to="/faq" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50 rounded-lg">
+                      FAQ
+                    </Link>
+                    <Link to="/help" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50 rounded-lg">
+                      Help Center
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile Call to Action Button */}
+              <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md transition-shadow w-full">
+                Book Now
+              </button>
+            </div>
+          </div>
+        )}
       </div>
-
-      {/* Mobile Dropdown Menu (shown when hamburger icon is clicked) */}
-      {isMenuOpen && (
-        <div className="absolute right-0 top-full bg-white border border-gray-200 shadow-lg rounded-md w-fit z-20 mt-2 md:hidden">
-          <ul className="flex flex-col space-y-4 p-4">
-            <li className="flex items-center gap-2 cursor-pointer">
-              <BsShop className="text-[#f83e2d]" /> Shop
-            </li>
-            <li className="flex items-center gap-1 cursor-pointer">
-              Pet Services <IoIosArrowDown className="text-lg text-[#f83e2d]" />
-            </li>
-            <li className="flex items-center gap-1 cursor-pointer">
-              Support <IoIosArrowDown className="text-lg text-[#f83e2d]" />
-            </li>
-          </ul>
-        </div>
-      )}
-    </div>
+    </header>
   );
 };
 
