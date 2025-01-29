@@ -116,8 +116,8 @@ const Navbar = () => {
                     <Link to="/faq" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50">
                       FAQ
                     </Link>
-                    <Link to="/help" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50">
-                      Help Center
+                    <Link to="/about" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50">
+                      About Us
                     </Link>
                   </div>
                 </div>
@@ -125,9 +125,11 @@ const Navbar = () => {
             </div>
 
             {/* Call to Action Button */}
+            <Link to="/Iform">
             <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md transition-shadow">
               Book Now
             </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

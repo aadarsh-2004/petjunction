@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, Dog, Shield, Clock, Star, Heart } from "lucide-react";
 import logo from '../assets/petjunction.png';
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const services = [
@@ -127,7 +128,7 @@ const HeroSection = () => {
                   </motion.div>
                 ))}
               </div>
-
+              <Link to="/IForm">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -136,6 +137,7 @@ const HeroSection = () => {
                 Book Now
                 <ChevronRight className="w-5 h-5" />
               </motion.button>
+              </Link>
             </motion.div>
           </motion.div>
 
