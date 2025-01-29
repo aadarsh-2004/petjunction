@@ -2,7 +2,7 @@ import React from 'react'
 
 const PetProducts = () => {
   return (
-    <div className='bg-white'>
+    <div className='bg-white mt-24 mb-12'>
     {/* heading  */}
     <div className=' text-center mb-4 z-10'>
         <h1 className='text-4xl pt-6  text-gray-800 font-serif'>Pocket Friendly Deals</h1>

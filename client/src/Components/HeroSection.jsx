@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import homesection from "../assets/homesection.jpg";
-
+import TestimonialSlider from "./TestimonialSlider";
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
@@ -19,6 +19,7 @@ const HeroSection = () => {
   }, [images.length]);
 
   return (
+    <>
     <div className="mt-15 md:mt-10   flex flex-col md:flex-row justify-center">
       {/* Background Image */}
       <img
@@ -86,6 +87,8 @@ const HeroSection = () => {
         </div>
       </div>
     </div>
+    <TestimonialSlider />
+    </>
   );
 };
 

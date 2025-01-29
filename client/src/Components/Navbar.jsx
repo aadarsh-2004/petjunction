@@ -4,8 +4,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { IoHomeOutline } from 'react-icons/io5';
 import { BsShop } from 'react-icons/bs';
 import { FaBars } from 'react-icons/fa';
-import service2 from '../assets/service2.svg';
-import { FaDog } from "react-icons/fa";
+import {Link} from 'react-router-dom'
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -30,16 +29,18 @@ const Navbar = () => {
       {/* Navigation Links for Desktop */}
       <div className="navoptions font-medium text-lg font-sans text-black md:flex md:space-x-14 md:mr-12 md:cursor-pointer hidden">
         <ul className="flex space-x-14">
+          <Link to="/" >
+            <li className="flex items-center gap-1">
+              <IoHomeOutline className="text-[#f83e2d]" /> Home
+            </li>
+          </Link>
 
-          <li className="flex items-center gap-1">
-            <IoHomeOutline className="text-[#f83e2d]" /> Home
-          </li>
 
-
-
+          <Link to="/shop">
           <li className="flex items-center gap-2">
             <BsShop className="text-[#f83e2d]" /> Shop
           </li>
+          </Link>
 
 
           <li className="relative flex items-center gap-1 cursor-pointer"  onClick={toggleServicesMenu}>

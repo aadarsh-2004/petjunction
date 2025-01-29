@@ -2,30 +2,25 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './Components/Navbar'
 import HeroSection from './Components/HeroSection'
-import SlickCarousel from './Components/Slick'
 import WhatsappButton from './Components/WhatsappButton'
-import TestimonialSlider from './Components/TestimonialSlider'
+
 import Footer from './Components/Footer'
 import PetProducts from './Components/PetProducts'
+import { BrowserRouter as Router ,Route,Routes } from 'react-router-dom'
 function App() {
-  
   return (
-    <div >
-      <Navbar/>
-      
-      <HeroSection/>
-      <WhatsappButton/>
-      <TestimonialSlider/> 
-      <PetProducts/>
-      <Footer/>
-      
-      
-
-      
-    
-    </div>
-
-  )
+    <Router>
+      <Navbar />
+      <WhatsappButton />
+      <Routes>
+        <Route path="/" element={<HeroSection />} />
+        <Route path="/shop" element={<PetProducts />} />
+        <Route path="/products" element={<PetProducts />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
 }
 
-export default App
+
+export default App ;
