@@ -1,19 +1,20 @@
-import { useState } from 'react'
-import './App.css'
-import Navbar from './Components/Navbar'
-import HeroSection from './Components/HeroSection'
-import WhatsappButton from './Components/WhatsappButton'
+import "./App.css";
+import Navbar from "./Components/Navbar";
+import WhatsappButton from "./Components/WhatsappButton";
+import Footer from "./Components/Footer";
+import PetProducts from "./Components/PetProducts";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import BoardingPage from "./Pages/Boarding";
+import Home from "./Pages/Home";
 
-import Footer from './Components/Footer'
-import PetProducts from './Components/PetProducts'
-import { BrowserRouter as Router ,Route,Routes } from 'react-router-dom'
 function App() {
   return (
     <Router>
       <Navbar />
       <WhatsappButton />
       <Routes>
-        <Route path="/" element={<HeroSection />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/boarding" element={<BoardingPage />} />
         <Route path="/shop" element={<PetProducts />} />
         <Route path="/products" element={<PetProducts />} />
       </Routes>
@@ -22,5 +23,4 @@ function App() {
   );
 }
 
-
-export default App ;
+export default App;
