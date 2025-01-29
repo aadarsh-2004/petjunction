@@ -66,7 +66,7 @@ const Navbar = () => {
             </Link>
 
             {/* Services Dropdown */}
-            <div className="relative group">
+            <div className="relative group z-50">
               <button
                 onClick={() => toggleDropdown('services')}
                 className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-cyan-500 transition-colors"
