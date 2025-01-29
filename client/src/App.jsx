@@ -1,16 +1,25 @@
-import "./App.css";
-import Navbar from "./Components/Navbar";
-import WhatsappButton from "./Components/WhatsappButton";
-import Footer from "./Components/Footer";
-import PetProducts from "./Components/PetProducts";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import BoardingPage from "./Pages/Boarding";
 import Home from "./Pages/Home";
+import { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import './App.css';
+import Navbar from './Components/Navbar';
+import HeroSection from './Components/HeroSection';
+import WhatsappButton from './Components/WhatsappButton';
+import Footer from './Components/Footer';
+import PetProducts from './Components/PetProducts';
+import PopupBanner from './Components/PopupBanner';
 
-function App() {
+// Create a wrapper component to handle the conditional rendering
+const App = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
-    <Router>
+    <>
       <Navbar />
+      {isHomePage && <PopupBanner />}
       <WhatsappButton />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -19,8 +28,9 @@ function App() {
         <Route path="/products" element={<PetProducts />} />
       </Routes>
       <Footer />
-    </Router>
+    </>
   );
-}
+};
 
 export default App;
+
