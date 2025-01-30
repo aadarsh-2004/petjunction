@@ -10,26 +10,31 @@ const HeroSection = () => {
       icon: "🦮",
       name: "Dog Training",
       description: "Expert training services",
+      link:"/dogtraining"
     },
     {
       icon: "🚶",
       name: "Dog Walking",
       description: "Daily walks & exercise",
+      link:"/dogwalking"
     },
     {
       icon: "✂️",
       name: "Dog Grooming",
       description: "Professional grooming",
+      link:"/doggrooming"
     },
     {
       icon: "🏠",
       name: "Dog Boarding",
       description: "Safe & comfortable stays",
+      link:"boarding"
     },
     {
       icon: "💝",
       name: "Dog Sitting",
       description: "Personalized care",
+      link:"/dogsitting"
     },
   ];
 
@@ -48,7 +53,7 @@ const HeroSection = () => {
   );
 
   return (
-    <div className="relative bg-gradient-to-b from-cyan-50 to-white pt-20">
+    <div className="relative bg-gradient-to-b from-cyan-100 to-white pt-20">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-1/4 w-48 h-48 bg-red-100 rounded-full opacity-20 blur-2xl" />
         <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-cyan-100 rounded-full opacity-20 blur-2xl" />
@@ -114,6 +119,7 @@ const HeroSection = () => {
                     transition={{ delay: 0.2 * index }}
                     className="group cursor-pointer"
                   >
+                    <Link to={service.link}>
                     <div className="flex flex-col items-center p-3 rounded-xl transition-all hover:bg-cyan-50">
                       <span className="text-3xl mb-2 transition-transform group-hover:scale-110">
                         {service.icon}
@@ -125,6 +131,7 @@ const HeroSection = () => {
                         {service.description}
                       </p>
                     </div>
+                    </Link>
                   </motion.div>
                 ))}
               </div>
@@ -176,7 +183,7 @@ const HeroSection = () => {
                   ease: "easeInOut",
                 }}
               >
-                <img src={logo} alt="PetJunction" className="h-60 w-auto" />
+                <img src={logo} alt="PetJunction" className="h-60 w-auto " />
               </motion.div>
 
               <motion.div

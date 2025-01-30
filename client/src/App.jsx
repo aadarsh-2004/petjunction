@@ -1,4 +1,4 @@
-import BoardingPage from "./Components/Boarding";
+import Boarding from "./Components/Boarding";
 import Home from "./Pages/Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar";
@@ -10,6 +10,10 @@ import IForm from "./Components/IForm";
 import Aboutus from "./Components/Aboutus";
 import ContactUs from "./Components/ContactUs";
 import FAQ from "./Components/FAQ";
+import DogWalking from "./Components/DogWalking";
+import DogGrooming from "./Components/DogGrooming";
+import DogSitting from "./Components/DogSitting";
+import DogTraining from "./Components/DogTraining";
 
 const App = () => {
   return (
@@ -26,7 +30,13 @@ const App = () => {
           <Route path="/about" element={<Aboutus />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/dogwalking" element={<DogWalking />} />
+          <Route path="/doggrooming" element={<DogGrooming />} />
+          <Route path="/dogsitting" element={<DogSitting />} />
+          <Route path="/dogtraining" element={<DogTraining />} />
+          <Route path="/boarding" element={<Boarding />} />
         </Routes>
+        
         <Footer />
       </Router>
     </>

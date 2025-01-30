@@ -5,7 +5,7 @@ const ContactUs = () => {
   return (
     <div className="max-w-4xl mt-24 mx-auto p-6">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4 text-red-500">Contact Us</h1>
+        <h1 className="text-4xl font-bold mb-4 text-cyan-700">Contact Us</h1>
         <p className="text-gray-600">We'd love to hear from you! Get in touch with any questions.</p>
       </div>
 

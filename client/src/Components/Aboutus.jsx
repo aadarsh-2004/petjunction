@@ -5,7 +5,7 @@ const Aboutus = () => {
   return (
     <div className="max-w-4xl mt-25 mb-28 mx-auto p-6">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4 text-red-500">About Pet Junction</h1>
+        <h1 className="text-4xl font-bold mb-4 text-cyan-700">About Pet Junction</h1>
         <PawPrint className="mx-auto text-cyan-500 mb-4" size={48} />
       </div>
 

@@ -164,7 +164,7 @@ const BoardingPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-cyan-100 to-white">
+    <div className="min-h-screen mt-20 bg-gradient-to-b from-cyan-100 to-white">
       <div className="container max-w-7xl mx-auto px-6  pb-12 ">
         <div className="text-center max-w-5xl mx-auto py-14 ">
           <h1 className="text-4xl font-bold mb-6">
