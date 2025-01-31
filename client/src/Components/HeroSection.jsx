@@ -104,6 +104,67 @@ const HeroSection = () => {
               Join the PetJunction family! We provide tail-wagging services that keep your furry friends happy, healthy, and excited for their next visit.
             </motion.p>
 
+            {/* Mobile Logo Section */}
+            <motion.div
+              className="block lg:hidden relative h-48 my-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              <motion.div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                animate={{
+                  y: [-10, 10, -10],
+                  rotate: [-5, 5, -5],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <img src={logo} alt="PetJunction" className="h-40 w-auto" />
+              </motion.div>
+
+              <motion.div
+                animate={{
+                  y: [-5, 5, -5],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute -right-4 top-0"
+              >
+                <FloatingCard
+                  icon={Heart}
+                  title="Loving Care"
+                  color="bg-red-500"
+                  delay={0.8}
+                />
+              </motion.div>
+
+              <motion.div
+                animate={{
+                  y: [5, -5, 5],
+                }}
+                transition={{
+                  duration: 3.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute -left-4 bottom-0"
+              >
+                <FloatingCard
+                  icon={Shield}
+                  title="Safe & Secure"
+                  color="bg-cyan-500"
+                  delay={1}
+                />
+              </motion.div>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -183,7 +244,7 @@ const HeroSection = () => {
                   ease: "easeInOut",
                 }}
               >
-                <img src={logo} alt="PetJunction" className="h-60 w-auto " />
+                <img src={logo} alt="PetJunction" className="h-60 w-auto" />
               </motion.div>
 
               <motion.div
