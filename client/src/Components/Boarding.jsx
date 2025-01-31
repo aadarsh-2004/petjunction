@@ -331,12 +331,12 @@ const BoardingPage = () => {
           </div>
         </div>
 
-        <div className="fixed bottom-6 right-6 z-50">
+        {/* <div className="fixed bottom-6 right-6 z-50">
           <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full p-4 flex items-center gap-2">
             <Book className="w-6 h-6" />
             <span className="font-medium">Quick Book</span>
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
