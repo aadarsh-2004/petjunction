@@ -7,7 +7,7 @@ const PopupBanner = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 z-200 h-fit right-0 animate-bounce  md:left-auto  bg-gradient-to-r from-cyan-200  to-cyan-300 rounded-lg shadow-xl overflow-hidden animate-slide-up">
+    <div className="fixed top-24 z-200 h-fit right-0 animate-bounce  md:left-auto  bg-gradient-to-r from-cyan-200  to-cyan-300 rounded-lg shadow-xl overflow-hidden animate-slide-up">
       <div className="relative  gap-4 p-1 md:p-2  flex">
         {/* Close Button */}
         {/* <button 

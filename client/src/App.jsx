@@ -20,7 +20,7 @@ const App = () => {
     <>
       <Router>
         <Navbar />
-        <PopupBanner />
+        {/* <PopupBanner /> */}
         {/* <WhatsappButton /> */}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -35,6 +35,7 @@ const App = () => {
           <Route path="/dogsitting" element={<DogSitting />} />
           <Route path="/dogtraining" element={<DogTraining />} />
           <Route path="/boarding" element={<Boarding />} />
+          
         </Routes>
         
         <Footer />

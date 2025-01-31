@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown, Home, Store, Dog, HeadphonesIcon } from 'lucide-react';
+import { Menu, X, ChevronDown, Home, Store,HandHeart, Dog, HeadphonesIcon } from 'lucide-react';
 import logo from '../assets/petjunction.png';
+import PopupBanner from './PopupBanner';
 
 const services = [
   {
@@ -64,6 +65,27 @@ const Navbar = () => {
               <Store className="w-4 h-4" />
               Shop
             </Link>
+
+    
+
+
+            {/* Adoption */}
+            <div className="relative group z-50">
+              <button
+                onClick={() => toggleDropdown('adopt')}
+                className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-cyan-500 transition-colors"
+              >
+                <HandHeart className="w-4 h-4" />
+                Adoption
+                
+              </button>
+
+              {activeDropdown === 'adopt' && (
+                <PopupBanner/>
+              )}
+            </div>
+
+
 
             {/* Services Dropdown */}
             <div className="relative group z-50">
