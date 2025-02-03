@@ -75,7 +75,7 @@ const Footer = () => {
               <h4 className="text-lg font-semibold text-gray-800 mb-4">
                 Quick Links
               </h4>
-              <div className="flex ml-22 md:ml-0   space-x-4">
+              <div className="flex ml-16 md:ml-0   space-x-4">
                 <Link to="/faq" className="text-gray-600 hover:text-cyan-700">
                   FAQ's
                 </Link>
