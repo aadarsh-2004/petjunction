@@ -1,7 +1,62 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { PawPrint, Clock, ShieldCheck, MapPin, Heart, Star } from 'lucide-react';
 
 const DogWalking = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const bookViaWhatsApp = (plan, price) => {
+    const message = encodeURIComponent(`Hello! I'm interested in booking the ${plan} dog walking package. 
+
+Package Details:
+- Plan: ${plan}
+- Price: ₹${price}/month
+
+Could you provide more information about booking?`);
+
+    window.open(`https://wa.me/+918239498447?text=${message}`, '_blank');
+  };
+
+  const walkingPlans = [
+    {
+      icon: PawPrint,
+      title: "Basic Plan",
+      description: "Perfect for a quick stroll around the neighborhood.",
+      price: "1,500",
+      details: [
+        { icon: Clock, text: "30 minutes per walk" },
+        { icon: ShieldCheck, text: "Insured walkers" },
+        { icon: Star, text: "15 walks per month" }
+      ]
+    },
+    {
+      icon: Heart,
+      title: "Standard Plan",
+      description: "Ideal for a longer, more engaging walk.",
+      price: "2,500",
+      details: [
+        { icon: Clock, text: "1 hour per walk" },
+        { icon: ShieldCheck, text: "Insured walkers" },
+        { icon: MapPin, text: "Custom routes" },
+        { icon: Star, text: "20 walks per month" }
+      ]
+    },
+    {
+      icon: PawPrint,
+      title: "Premium Plan",
+      description: "The ultimate experience for your dog.",
+      price: "4,000",
+      details: [
+        { icon: Clock, text: "1.5 hours per walk" },
+        { icon: ShieldCheck, text: "Insured walkers" },
+        { icon: MapPin, text: "Custom routes" },
+        { icon: Heart, text: "Playtime included" },
+        { icon: Star, text: "30 walks per month" }
+      ]
+    }
+  ];
+
   return (
     <div className="max-w-6xl mt-24 mx-auto p-6">
       {/* Hero Section */}
@@ -16,84 +71,31 @@ const DogWalking = () => {
       <div className="bg-cyan-50 p-8 rounded-lg mb-12">
         <h2 className="text-2xl font-semibold text-cyan-800 mb-6">Our Monthly Packages</h2>
         <div className="grid md:grid-cols-3 gap-6">
-          {/* Basic Plan */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
-            <PawPrint className="mx-auto text-cyan-600 mb-4" size={40} />
-            <h3 className="text-xl font-semibold text-cyan-800 mb-2">Basic Plan</h3>
-            <p className="text-gray-600 mb-4">Perfect for a quick stroll around the neighborhood.</p>
-            <p className="text-3xl font-bold text-cyan-800 mb-4">₹1,500<span className="text-lg text-gray-600">/month</span></p>
-            <ul className="text-gray-600 space-y-2 mb-6">
-              <li className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-cyan-600" /> 30 minutes per walk
-              </li>
-              <li className="flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-cyan-600" /> Insured walkers
-              </li>
-              <li className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-cyan-600" /> 15 walks per month
-              </li>
-            </ul>
-            <button className="w-full bg-cyan-600 text-white py-2 rounded-lg hover:bg-cyan-700 transition-colors">
-              Book Now
-            </button>
-          </div>
-
-          {/* Standard Plan */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
-            <Heart className="mx-auto text-cyan-600 mb-4" size={40} />
-            <h3 className="text-xl font-semibold text-cyan-800 mb-2">Standard Plan</h3>
-            <p className="text-gray-600 mb-4">Ideal for a longer, more engaging walk.</p>
-            <p className="text-3xl font-bold text-cyan-800 mb-4">₹2,500<span className="text-lg text-gray-600">/month</span></p>
-            <ul className="text-gray-600 space-y-2 mb-6">
-              <li className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-cyan-600" /> 1 hour per walk
-              </li>
-              <li className="flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-cyan-600" /> Insured walkers
-              </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-cyan-600" /> Custom routes
-              </li>
-              <li className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-cyan-600" /> 20 walks per month
-              </li>
-            </ul>
-            <button className="w-full bg-cyan-600 text-white py-2 rounded-lg hover:bg-cyan-700 transition-colors">
-              Book Now
-            </button>
-          </div>
-
-          {/* Premium Plan */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
-            <PawPrint className="mx-auto text-cyan-600 mb-4" size={40} />
-            <h3 className="text-xl font-semibold text-cyan-800 mb-2">Premium Plan</h3>
-            <p className="text-gray-600 mb-4">The ultimate experience for your dog.</p>
-            <p className="text-3xl font-bold text-cyan-800 mb-4">₹4,000<span className="text-lg text-gray-600">/month</span></p>
-            <ul className="text-gray-600 space-y-2 mb-6">
-              <li className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-cyan-600" /> 1.5 hours per walk
-              </li>
-              <li className="flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-cyan-600" /> Insured walkers
-              </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-cyan-600" /> Custom routes
-              </li>
-              <li className="flex items-center gap-2">
-                <Heart className="w-5 h-5 text-cyan-600" /> Playtime included
-              </li>
-              <li className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-cyan-600" /> 30 walks per month
-              </li>
-            </ul>
-            <button className="w-full bg-cyan-600 text-white py-2 rounded-lg hover:bg-cyan-700 transition-colors">
-              Book Now
-            </button>
-          </div>
+          {walkingPlans.map((plan, index) => (
+            <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+              <plan.icon className="mx-auto text-cyan-600 mb-4" size={40} />
+              <h3 className="text-xl font-semibold text-cyan-800 mb-2">{plan.title}</h3>
+              <p className="text-gray-600 mb-4">{plan.description}</p>
+              <p className="text-3xl font-bold text-cyan-800 mb-4">₹{plan.price}<span className="text-lg text-gray-600">/month</span></p>
+              <ul className="text-gray-600 space-y-2 mb-6">
+                {plan.details.map((detail, idx) => (
+                  <li key={idx} className="flex items-center gap-2">
+                    <detail.icon className="w-5 h-5 text-cyan-600" /> {detail.text}
+                  </li>
+                ))}
+              </ul>
+              <button 
+                onClick={() => bookViaWhatsApp(plan.title, plan.price)}
+                className="w-full bg-cyan-600 text-white py-2 rounded-lg hover:bg-cyan-700 transition-colors"
+              >
+                Book Now
+              </button>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Service Details Section */}
+      {/* Additional Sections Remain the Same */}
       <div className="mb-12">
         <h2 className="text-2xl font-semibold text-cyan-800 mb-6">Why Choose Us?</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -127,7 +129,10 @@ const DogWalking = () => {
         <p className="text-gray-200 mb-6">
           Book a walk today and give your dog the exercise and adventure they deserve!
         </p>
-        <button className="bg-white text-cyan-800 py-3 px-6 rounded-lg font-semibold hover:bg-cyan-100 transition-colors">
+        <button 
+          onClick={() => bookViaWhatsApp('Dog Walking Services', '1,500-4,000')}
+          className="bg-white text-cyan-800 py-3 px-6 rounded-lg font-semibold hover:bg-cyan-100 transition-colors"
+        >
           Book Now
         </button>
       </div>

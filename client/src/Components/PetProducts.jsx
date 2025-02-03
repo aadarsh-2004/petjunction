@@ -1,7 +1,10 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Clock, AlertCircle } from 'lucide-react';
 
 const PetProducts = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const products = [
     { id: 1, img: "https://headsupfortails.com/cdn/shop/files/HUFT-Cat-Litter-_Natural-_-Clumping_---Lavender-Scented---10-kg.jpg?v=1686811084&width=533", title: "Cat Litter" },
     { id: 2, img: "https://m.media-amazon.com/images/I/811QqACja8L.jpg", title: "Pet Food" },

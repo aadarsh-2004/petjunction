@@ -8,7 +8,7 @@ import {
   MapPin,
   ExternalLink,
 } from "lucide-react";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="w-full relative ">
@@ -75,21 +75,20 @@ const Footer = () => {
               <h4 className="text-lg font-semibold text-gray-800 mb-4">
                 Quick Links
               </h4>
-              <ul className="grid grid-cols-2 gap-4 text-sm">
-                {["About Us", "Book Now", "Pet Care Tips", "Contact"].map(
-                  (link) => (
-                    <li key={link}>
-                      <a
-                        href={link}
-                        className="text-gray-600 text-center hover:text-cyan-500 flex items-center gap-2"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        {link}
-                      </a>
-                    </li>
-                  )
-                )}
-              </ul>
+              <div className="flex ml-22 md:ml-0   space-x-4">
+                <Link to="/faq" className="text-gray-600 hover:text-cyan-700">
+                  FAQ's
+                </Link>
+                <Link to="/about" className="text-gray-600 hover:text-cyan-700">
+                  About Us
+                </Link>
+                <Link
+                  to="/contact"
+                  className="text-gray-600 hover:text-cyan-700"
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
 
             {/* Contact Info */}

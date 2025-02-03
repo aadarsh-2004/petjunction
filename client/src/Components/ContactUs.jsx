@@ -1,7 +1,13 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 const ContactUs = () => {
+  
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+  
   return (
     <div className="max-w-4xl mt-24 mx-auto p-6">
       <div className="text-center mb-8">

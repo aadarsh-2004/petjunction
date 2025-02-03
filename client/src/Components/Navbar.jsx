@@ -8,22 +8,27 @@ const services = [
   {
     title: "Dog Walking",
     description: "Daily walks and exercise",
-    icon: "🦮"
+    icon: "🦮",
+    link:"/dogwalking"
+    
   },
   {
     title: "Dog Grooming",
     description: "Professional grooming services",
-    icon: "✂️"
+    icon: "✂️",
+    link:"/doggrooming"
   },
   {
     title: "Dog Boarding",
     description: "Comfortable overnight stays",
-    icon: "🏠"
+    icon: "🏠",
+    link:"/boarding"
   },
   {
     title: "Dog Sitting",
     description: "In-home pet care",
-    icon: "💝"
+    icon: "💝",
+    link:"/dogsitting"
   }
 ];
 
@@ -102,6 +107,8 @@ const Navbar = () => {
                 <div className="absolute top-full right-0 mt-2 w-[480px] bg-white rounded-xl shadow-lg border p-4">
                   <div className="grid grid-cols-2 gap-4">
                     {services.map((service) => (
+                      <Link to={service.link}>
+                      
                       <div
                         key={service.title}
                         className="flex items-start gap-3 p-3 rounded-xl hover:bg-cyan-50 transition-colors cursor-pointer"
@@ -112,6 +119,7 @@ const Navbar = () => {
                           <p className="text-xs text-gray-500 mt-1">{service.description}</p>
                         </div>
                       </div>
+                      </Link>
                     ))}
                   </div>
                 </div>

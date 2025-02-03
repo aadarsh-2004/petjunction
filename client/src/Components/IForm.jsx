@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Send, MessageCircle, PawPrint, Phone, User, Mail, Heart } from 'lucide-react';
 
 const IForm = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [formData, setFormData] = useState({
     clientName: '',
     phoneNumber: '',

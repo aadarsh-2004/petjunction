@@ -20,6 +20,19 @@ import logo from "../assets/dog.jpg";
 const BoardingPage = () => {
   const [selectedTab, setSelectedTab] = useState("requirements");
 
+  const bookViaWhatsApp = (title, price ,features) => {
+    const message =
+      encodeURIComponent(`Hello! I'm interested in booking the ${title}  
+
+      Service Details:
+      - Features: ${features}
+      - Price: ₹${price}
+
+      Could you provide more information about booking?`);
+
+          window.open(`https://wa.me/+918239498447?text=${message}`, "_blank");
+        };
+
   const boardingOptions = [
     {
       title: "AC Boarding",
@@ -40,8 +53,8 @@ const BoardingPage = () => {
       icon: Snowflake,
       color: "bg-blue-500",
       hoverColor: "hover:bg-blue-600",
-      image:"https://storage.googleapis.com/stateless-ceoblognation-com/2024/07/9c210f7c-cover-story-aug-2024-img_2034-scaled.jpg"
-      
+      image:
+        "https://storage.googleapis.com/stateless-ceoblognation-com/2024/07/9c210f7c-cover-story-aug-2024-img_2034-scaled.jpg",
     },
     {
       title: "Non-AC Boarding",
@@ -62,7 +75,8 @@ const BoardingPage = () => {
       icon: Fan,
       color: "bg-green-500",
       hoverColor: "hover:bg-green-600",
-      image:"https://www.shutterstock.com/image-photo/dog-sitting-front-fan-260nw-665203357.jpg"
+      image:
+        "https://www.shutterstock.com/image-photo/dog-sitting-front-fan-260nw-665203357.jpg",
     },
   ];
 
@@ -196,45 +210,52 @@ const BoardingPage = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16 px-4">
-      {boardingOptions.map((option) => (
-        <div key={option.title} className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-cyan-200 flex flex-col md:flex-row items-center md:items-stretch">
-          {/* Dog Image */}
-          <div className="w-full md:w-1/3 bg-gradient-to-r from-cyan-300 via-cyan-100 to-white flex items-center justify-center p-6">
-            {/* <img src={option.image} alt="Dog" className="w-[400px] h-34 rotate-270 rounded-2xl border-4 border-white shadow-md" /> */}
-          </div>
-          
-          {/* Content Section */}
-          <div className="w-full md:w-2/3 p-6 flex flex-col justify-between">
-            {/* Title & Pricing */}
-            <div className="flex justify-between items-center">
-              <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-800">
-                <option.icon className="w-6 h-6 text-red-500" />
-                {option.title}
-              </h2>
-              <div className="text-right">
-                <span className="text-3xl font-extrabold text-cyan-600">{option.price}</span>
-                <p className="text-sm text-gray-500">{option.timeUnit}</p>
+          {boardingOptions.map((option) => (
+            <div
+              key={option.title}
+              className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-cyan-200 flex flex-col md:flex-row items-center md:items-stretch"
+            >
+              {/* Dog Image */}
+              <div className="w-full md:w-1/3 bg-gradient-to-r from-cyan-300 via-cyan-100 to-white flex items-center justify-center p-6">
+                {/* <img src={option.image} alt="Dog" className="w-[400px] h-34 rotate-270 rounded-2xl border-4 border-white shadow-md" /> */}
+              </div>
+
+              {/* Content Section */}
+              <div className="w-full md:w-2/3 p-6 flex flex-col justify-between">
+                {/* Title & Pricing */}
+                <div className="flex justify-between items-center">
+                  <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-800">
+                    <option.icon className="w-6 h-6 text-red-500" />
+                    {option.title}
+                  </h2>
+                  <div className="text-right">
+                    <span className="text-3xl font-extrabold text-cyan-600">
+                      {option.price}
+                    </span>
+                    <p className="text-sm text-gray-500">{option.timeUnit}</p>
+                  </div>
+                </div>
+
+                {/* Features List */}
+                <ul className="space-y-3 my-4">
+                  {option.features.map((feature, index) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-orange-500" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Booking Button */}
+                <button 
+                onClick={() => bookViaWhatsApp(option.title,option.price,option.features)}
+                className="w-full py-3 bg-cyan-500 hover:bg-cyan-600 text-white rounded-xl font-semibold flex items-center justify-center gap-2 transition-all transform hover:scale-105 shadow-md">
+                  Book Now
+                </button>
               </div>
             </div>
-            
-            {/* Features List */}
-            <ul className="space-y-3 my-4">
-              {option.features.map((feature, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-orange-500" />
-                  <span className="text-gray-700 text-sm">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            
-            {/* Booking Button */}
-            <button className="w-full py-3 bg-cyan-500 hover:bg-cyan-600 text-white rounded-xl font-semibold flex items-center justify-center gap-2 transition-all transform hover:scale-105 shadow-md"> 
-              Book Now
-            </button>
-          </div>
+          ))}
         </div>
-      ))}
-    </div>
 
         <div className="max-w-7xl mx-auto mb-16">
           <div className="flex gap-4 mb-6 border-b">
