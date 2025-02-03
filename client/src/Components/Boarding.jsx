@@ -131,7 +131,7 @@ const BoardingPage = () => {
     {
       name: "Arin Wilson",
       pet: "Joyee",
-      rating: 4.5,
+      rating: 5,
       comment:
         "Great experience with the non-AC boarding. The ventilation was perfect and Luna was well taken care of.",
       image: logo,
@@ -139,7 +139,7 @@ const BoardingPage = () => {
     {
       name: "Arman Gupta",
       pet: "Rocky",
-      rating: 4.3,
+      rating: 4,
       comment:
         "The daily updates and photos gave me peace of mind. Will definitely use again!",
       image: logo,
