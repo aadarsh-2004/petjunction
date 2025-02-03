@@ -121,25 +121,25 @@ const BoardingPage = () => {
 
   const testimonials = [
     {
-      name: "Sarah Mitchell",
-      pet: "Max",
-      rating: 5,
+      name: "Vinita Verma",
+      pet: "Mark",
+      rating: 4,
       comment:
         "The AC boarding facility is amazing! Max loved his stay and the staff was incredibly caring.",
       image: logo,
     },
     {
-      name: "John Davis",
-      pet: "Luna",
-      rating: 5,
+      name: "Arin Wilson",
+      pet: "Joyee",
+      rating: 4.5,
       comment:
         "Great experience with the non-AC boarding. The ventilation was perfect and Luna was well taken care of.",
       image: logo,
     },
     {
-      name: "Emma Wilson",
+      name: "Arman Gupta",
       pet: "Rocky",
-      rating: 5,
+      rating: 4.3,
       comment:
         "The daily updates and photos gave me peace of mind. Will definitely use again!",
       image: logo,
