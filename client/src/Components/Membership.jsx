@@ -6,7 +6,7 @@ const MembershipSection = () => {
     {
       title: "Basic Paw",
       icon: <Star className="w-6 h-6 text-cyan-500" />,
-      price: "$29",
+      price: "₹7,000",
       period: "/month",
       description: "Perfect for new pet parents starting their journey",
       features: [
@@ -22,7 +22,7 @@ const MembershipSection = () => {
     {
       title: "Premium Paw",
       icon: <Crown className="w-6 h-6 text-yellow-500" />,
-      price: "$59",
+      price: "₹12,000",
       period: "/month",
       description: "Most popular choice for dedicated pet owners",
       features: [
@@ -39,7 +39,7 @@ const MembershipSection = () => {
     {
       title: "Ultimate Paw",
       icon: <Shield className="w-6 h-6 text-red-500" />,
-      price: "$99",
+      price: "₹18,000",
       period: "/month",
       description: "Package for the ultimate pet experience",
       features: [
@@ -72,7 +72,7 @@ Please contact me to proceed with the subscription.
     `.trim();
 
     // Create WhatsApp URL with phone number and encoded message
-    const whatsappUrl = `https://wa.me/917877571101?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+918239498447?text=${encodeURIComponent(message)}`;
     
     // Open WhatsApp in new tab
     window.open(whatsappUrl, '_blank');
