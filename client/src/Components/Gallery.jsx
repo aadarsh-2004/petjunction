@@ -1,5 +1,9 @@
 import React from "react";
-
+import photo1 from "../assets/IMG_7689.jpg"
+import photo2 from "../assets/IMG_8049.jpg"
+import photo3 from "../assets/IMG_7785.jpg"
+import photo4 from "../assets/IMG_7533.jpg"
+import photo9 from "../assets/IMG_7785.jpg"
 const Gallery = () => {
   return (
     <div>
@@ -17,14 +21,14 @@ const Gallery = () => {
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
+              src={photo1}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
+              src={photo2}
               alt=""
             />
           </div>
@@ -40,14 +44,14 @@ const Gallery = () => {
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
+              src={photo2}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
+              src={photo4}
               alt=""
             />
           </div>
@@ -63,7 +67,7 @@ const Gallery = () => {
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
+              src={photo3}
               alt=""
             />
           </div>
