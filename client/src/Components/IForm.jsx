@@ -207,10 +207,10 @@ ${selectedServiceNames}
 
         {/* Submit Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-600 to-cyan-500 text-white px-8 py-4 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all">
+          {/* <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-600 to-cyan-500 text-white px-8 py-4 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all">
             <Send size={20} className="animate-pulse" />
             Submit Form
-          </button>
+          </button> */}
           <button 
             onClick={handleWhatsAppClick}
             className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-green-400 text-white px-8 py-4 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all">
