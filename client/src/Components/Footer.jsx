@@ -35,19 +35,19 @@ const Footer = () => {
               </p>
               <div className="flex justify-center md:justify-start space-x-3">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/petjunction.care/"
                   className="p-2 bg-cyan-50 text-cyan-500 rounded-lg hover:bg-cyan-100 transition"
                 >
                   <Facebook className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/petjunction.care/"
                   className="p-2 bg-cyan-50 text-cyan-500 rounded-lg hover:bg-cyan-100 transition"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/petjunction.care/"
                   className="p-2 bg-cyan-50 text-cyan-500 rounded-lg hover:bg-cyan-100 transition"
                 >
                   <Twitter className="w-5 h-5" />

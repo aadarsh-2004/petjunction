@@ -1,10 +1,21 @@
 import React from "react";
 import photo1 from "../assets/IMG_7689.jpg"
-import photo2 from "../assets/IMG_8049.jpg"
+import photo9 from "../assets/IMG_8049.jpg"
 import photo3 from "../assets/IMG_7785.jpg"
 import photo4 from "../assets/IMG_7533.jpg"
-import photo9 from "../assets/IMG_7785.jpg"
+// import photo9 from "../assets/IMG_7785.jpg"0
+import photo8 from "../assets/imggg3.jpg"
+import photo2 from "../assets/careimg.jpg"
+import photo18 from "../assets/cutepet.jpg"
+import photo21  from  "../assets/snowpet.jpg"
+import photo22  from  "../assets/standdog.jpg"
+import photo23  from  "../assets/ss.png" 
+import photo24  from  "../assets/fswalk.jpg"
+import photo29  from  "../assets/sit.jpg"
+import photo28  from  "../assets/stand.jpg"
+
 const Gallery = () => {
+  
   return (
     <div>
       <div className="text-center mt-18 mb-12 relative">
@@ -28,14 +39,14 @@ const Gallery = () => {
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src={photo2}
+              src={photo21}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
+              src={photo22}
               alt=""
             />
           </div>
@@ -44,21 +55,21 @@ const Gallery = () => {
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src={photo2}
+              src={photo8}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src={photo4}
+              src={photo23}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
+              src={photo24}
               alt=""
             />
           </div>
@@ -74,14 +85,14 @@ const Gallery = () => {
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
+              src={photo18}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
+              src={photo21}
               alt=""
             />
           </div>
@@ -90,21 +101,21 @@ const Gallery = () => {
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
+              src={photo2}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
+              src={photo28}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
+              src={photo29}
               alt=""
             />
           </div>
