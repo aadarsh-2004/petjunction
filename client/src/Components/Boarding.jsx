@@ -20,7 +20,7 @@ import logo from "../assets/dog.jpg";
 const BoardingPage = () => {
   const [selectedTab, setSelectedTab] = useState("requirements");
 
-  const bookViaWhatsApp = (title, price ,features) => {
+  const bookViaWhatsApp = (title, price, features) => {
     const message =
       encodeURIComponent(`Hello! I'm interested in booking the ${title}  
 
@@ -30,8 +30,8 @@ const BoardingPage = () => {
 
       Could you provide more information about booking?`);
 
-          window.open(`https://wa.me/+918239498447?text=${message}`, "_blank");
-        };
+    window.open(`https://wa.me/+918239498447?text=${message}`, "_blank");
+  };
 
   const boardingOptions = [
     {
@@ -178,7 +178,7 @@ const BoardingPage = () => {
   ];
 
   return (
-    <div className="min-h-screen mt-20 bg-gradient-to-b from-cyan-100 to-white">
+    <div className="min-h-screen mt-20 bg-gradient-to-b from-cyan-50 to-white">
       <div className="container max-w-7xl mx-auto px-6  pb-12 ">
         <div className="text-center max-w-5xl mx-auto py-14 ">
           <h1 className="text-4xl font-bold mb-6">
@@ -216,7 +216,7 @@ const BoardingPage = () => {
               className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-cyan-200 flex flex-col md:flex-row items-center md:items-stretch"
             >
               {/* Dog Image */}
-              <div className="w-full md:w-1/3 bg-gradient-to-r from-cyan-300 via-cyan-100 to-white flex items-center justify-center p-6">
+              <div className="w-full md:w-1/3 bg-gradient-to-r from-cyan-100 via-cyan-50 to-white flex items-center justify-center p-6">
                 {/* <img src={option.image} alt="Dog" className="w-[400px] h-34 rotate-270 rounded-2xl border-4 border-white shadow-md" /> */}
               </div>
 
@@ -247,9 +247,12 @@ const BoardingPage = () => {
                 </ul>
 
                 {/* Booking Button */}
-                <button 
-                onClick={() => bookViaWhatsApp(option.title,option.price,option.features)}
-                className="w-full py-3 bg-cyan-500 hover:bg-cyan-600 text-white rounded-xl font-semibold flex items-center justify-center gap-2 transition-all transform hover:scale-105 shadow-md">
+                <button
+                  onClick={() =>
+                    bookViaWhatsApp(option.title, option.price, option.features)
+                  }
+                  className="w-full py-3 bg-cyan-500 hover:bg-cyan-600 text-white rounded-xl font-semibold flex items-center justify-center gap-2 transition-all transform hover:scale-105 shadow-md"
+                >
                   Book Now
                 </button>
               </div>

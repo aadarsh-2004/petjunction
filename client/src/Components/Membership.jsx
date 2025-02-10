@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Check, ChevronRight, Star, Crown, Shield } from 'lucide-react';
 
 const MembershipSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
   const plans = [
     {
       title: "Basic Paw",
@@ -54,8 +57,30 @@ const MembershipSection = () => {
     }
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const handleChoosePlan = (plan) => {
-    // Create message text
     const message = `
 *New Membership Plan Request*
 ---------------------------
@@ -71,18 +96,16 @@ ${plan.features.map(feature => `✓ ${feature}`).join('\n')}
 Please contact me to proceed with the subscription.
     `.trim();
 
-    // Create WhatsApp URL with phone number and encoded message
     const whatsappUrl = `https://wa.me/+918239498447?text=${encodeURIComponent(message)}`;
-    
-    // Open WhatsApp in new tab
     window.open(whatsappUrl, '_blank');
   };
 
   return (
-    <div className="py-16 bg-gradient-to-b from-cyan-100/2 via-white to-cyan-100">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-12">
+    <div className="py-16 bg-gradient-to-b from-cyan-100/2 via-white to-cyan-50">
+      <div className="container mx-auto px-4" ref={sectionRef}>
+        <div className={`text-center mb-12 transition-all duration-1000 transform ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Choose Your Membership Plan
           </h2>
@@ -91,12 +114,18 @@ Please contact me to proceed with the subscription.
           </p>
         </div>
 
-        {/* Membership Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {plans.map((plan) => (
+          {plans.map((plan, index) => (
             <div
               key={plan.title}
-              className={`relative rounded-2xl ${plan.color} border-2 border-dashed border-red-500 p-6 shadow-2xl transform transition-transform hover:-translate-y-1`}
+              className={`relative rounded-2xl ${plan.color} border-2 border-dashed border-red-500 p-6 shadow-2xl transform transition-all duration-1000 ${
+                isVisible 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-10'
+              }`}
+              style={{
+                transitionDelay: `${index * 200}ms`
+              }}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
