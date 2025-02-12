@@ -23,21 +23,21 @@ Could you provide more information about the enrollment process?`);
       icon: BookOpen,
       title: "Basic Obedience",
       description: "Learn essential commands like sit, stay, and come.",
-      price: "2,000",
+      price: "1,000",
       plan: "Basic Obedience"
     },
     {
       icon: Shield,
       title: "Advanced Training",
       description: "Master complex commands and tricks.",
-      price: "3,500",
+      price: "2,500",
       plan: "Advanced Training"
     },
     {
       icon: Award,
       title: "Behavioral Training",
       description: "Address issues like aggression, anxiety, and barking.",
-      price: "5,000",
+      price: "1,500",
       plan: "Behavioral Training"
     }
   ];
@@ -74,7 +74,7 @@ Could you provide more information about the enrollment process?`);
             <program.icon className="mx-auto text-blue-600 mb-4" size={40} />
             <h3 className="text-xl font-semibold text-blue-800 mb-2">{program.title}</h3>
             <p className="text-gray-600 mb-4">{program.description}</p>
-            <p className="text-3xl font-bold text-blue-800 mb-4">₹{program.price}<span className="text-lg text-gray-600">/course</span></p>
+            <p className="text-3xl font-bold text-blue-800 mb-4">₹{program.price}<span className="text-lg text-gray-600">/day</span></p>
             <button 
               onClick={() => enrollViaWhatsApp(program.plan, program.price)}
               className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"

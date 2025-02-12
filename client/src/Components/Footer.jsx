@@ -99,7 +99,7 @@ const Footer = () => {
               <div className="space-y-2 text-sm">
                 <div className="flex items-center justify-center md:justify-start space-x-2">
                   <Phone className="w-4 h-4 text-cyan-500" />
-                  <span className="text-gray-600">(555) 123-4567</span>
+                  <span className="text-gray-600">+919784249525</span>
                 </div>
                 <div className="flex items-center justify-center md:justify-start space-x-2">
                   <Mail className="w-4 h-4 text-cyan-500" />
@@ -108,7 +108,7 @@ const Footer = () => {
                 <div className="flex items-center justify-center md:justify-start space-x-2">
                   <MapPin className="w-4 h-4 text-cyan-500" />
                   <span className="text-gray-600">
-                    123 Pet Street, Pawville
+                      10, Inspiro Building, New Bhopalpura, Udaipur 
                   </span>
                 </div>
               </div>
