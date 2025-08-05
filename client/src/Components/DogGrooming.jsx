@@ -6,7 +6,7 @@ const DogGrooming = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const PHONE_NUMBER = "918239498447"; // Replace with your actual WhatsApp number
+  const PHONE_NUMBER = "+919784249525"; // Replace with your actual WhatsApp number
 
   const groomingServices = [
     {

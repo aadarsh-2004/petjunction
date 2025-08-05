@@ -23,7 +23,7 @@ const DogWalking = () => {
 
       Could you provide more information about booking?`);
 
-          window.open(`https://wa.me/+918239498447?text=${message}`, "_blank");
+          window.open(`https://wa.me/+919784249525?text=${message}`, "_blank");
     };
 
   const walkingPlans = [

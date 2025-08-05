@@ -58,7 +58,7 @@ const ContactUs = () => {
               <Phone className="text-cyan-600" size={24} />
               <div>
                 <h3 className="font-semibold">Phone</h3>
-                <p className="text-gray-600">+1 (555) 123-4567</p>
+                <p className="text-gray-600">+919784249525</p>
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@ const ContactUs = () => {
               <MapPin className="text-cyan-600" size={24} />
               <div>
                 <h3 className="font-semibold">Location</h3>
-                <p className="text-gray-600">123 Pet Street, Pawsome City, PC 12345</p>
+                <p className="text-gray-600">10, Inspiro Building, New Bhopalpura, Udaipur</p>
               </div>
             </div>
           </div>

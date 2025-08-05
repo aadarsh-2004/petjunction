@@ -249,9 +249,11 @@ const Navbar = () => {
               </div>
 
               {/* Mobile Call to Action Button */}
+               <Link to="/Iform">
               <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md transition-shadow w-full">
                 Book Now
               </button>
+              </Link>
             </div>
           </div>
         )}

@@ -96,7 +96,7 @@ ${plan.features.map(feature => `✓ ${feature}`).join('\n')}
 Please contact me to proceed with the subscription.
     `.trim();
 
-    const whatsappUrl = `https://wa.me/+918239498447?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+919784249525?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 

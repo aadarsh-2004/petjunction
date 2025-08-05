@@ -64,7 +64,7 @@ ${selectedServiceNames}
     `.trim();
 
     // Create WhatsApp URL with phone number and encoded message
-    const whatsappUrl = `https://wa.me/917877571101?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+919784249525?text=${encodeURIComponent(message)}`;
     
     // Open WhatsApp in new tab
     window.open(whatsappUrl, '_blank');
