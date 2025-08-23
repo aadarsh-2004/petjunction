@@ -7,130 +7,210 @@ import {
   Phone,
   MapPin,
   ExternalLink,
+  Heart,
+  ArrowRight,
+  Star,
+  Shield,
+  Award,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
-    <div className="w-full relative ">
-      {/* Wave SVG */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none -z-30">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#d2fafe"
-            fillOpacity="1"
-            d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,181.3C672,192,768,160,864,144C960,128,1056,128,1152,138.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
+    <div className="w-full relative bg-white">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-yellow-400/30 to-orange-400/30 rounded-full blur-2xl animate-pulse"></div> */}
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-r from-orange-400/20 to-red-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-r from-amber-400/25 to-yellow-400/25 rounded-full blur-xl animate-pulse delay-500"></div>
+        <div className="absolute top-32 right-10 w-20 h-20 bg-gradient-to-r from-orange-300/20 to-amber-300/20 rounded-full blur-lg animate-pulse delay-700"></div>
+        <div className="absolute bottom-10 left-1/4 w-36 h-36 bg-gradient-to-r from-yellow-300/15 to-orange-300/15 rounded-full blur-2xl animate-pulse delay-300"></div>
       </div>
 
-      <footer className="w-full pt-4 z-50">
-        <div className="container mx-auto px-4 md:px-6 py-8 md:py-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center md:text-left">
-            {/* Company Info */}
-            <div className="space-y-3">
-              <h3 className="text-xl font-bold text-gray-800">PetJunction</h3>
-              <p className="text-gray-600 text-sm">
-                Your one-stop destination for premium pet care services. Making
-                tails wag and pets happy since 2020.
+      <footer className="relative z-10 pt-16 pb-8">
+        <div className="container mx-auto px-6 md:px-8">
+          {/* Main Footer Content */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            
+            {/* Company Info with Logo */}
+            <div className="lg:col-span-2 space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <img
+                    src="/petjunction.png"
+                    alt="PetJunction Logo"
+                    className="w-16 h-16 rounded-2xl shadow-xl ring-4 ring-orange-200/50 hover:ring-yellow-400/70 transition-all duration-800"
+                  />
+                  {/* <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl blur opacity-20 animate-pulse"></div> */}
+                </div>
+                <div>
+                  <h3 className="text-3xl font-black mb-1">
+                    <span className="bg-gradient-to-b from-yellow-600 via-yellow-500 to-orange-400 text-transparent bg-clip-text">
+                      PetJunction
+                    </span>
+                  </h3>
+                  {/* <p className="text-orange-600 font-medium">Caring for your furry family</p> */}
+                </div>
+              </div>
+              
+              <p className="text-gray-700 leading-relaxed max-w-md">
+                Your premier destination for pet services in Udaipur. We offer expert dog training, comfortable boarding, and professional grooming. 
+                <span className="text-orange-600 font-semibold"> Making tails wag since 2020!</span>
               </p>
-              <div className="flex justify-center md:justify-start space-x-3">
-                <a
-                  href="https://www.instagram.com/petjunction.care/"
-                  className="p-2 bg-cyan-50 text-cyan-500 rounded-lg hover:bg-cyan-100 transition"
-                >
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://www.instagram.com/petjunction.care/"
-                  className="p-2 bg-cyan-50 text-cyan-500 rounded-lg hover:bg-cyan-100 transition"
-                >
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://www.instagram.com/petjunction.care/"
-                  className="p-2 bg-cyan-50 text-cyan-500 rounded-lg hover:bg-cyan-100 transition"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-4 max-w-sm">
+                <div className="text-center p-3 bg-orange-50 backdrop-blur-sm rounded-xl border border-orange-200/50 shadow-sm">
+                  <div className="text-2xl font-bold text-orange-600">500+</div>
+                  <div className="text-xs text-gray-600">Happy Pets</div>
+                </div>
+                <div className="text-center p-3 bg-yellow-50 backdrop-blur-sm rounded-xl border border-yellow-200/50 shadow-sm">
+                  <div className="text-2xl font-bold text-yellow-600">5★</div>
+                  <div className="text-xs text-gray-600">Rating</div>
+                </div>
+                <div className="text-center p-3 bg-amber-50 backdrop-blur-sm rounded-xl border border-amber-200/50 shadow-sm">
+                  <div className="text-2xl font-bold text-amber-600">24/7</div>
+                  <div className="text-xs text-gray-600">Support</div>
+                </div>
+              </div>
+
+              {/* Social Media */}
+              <div className="flex items-center gap-4 text-black">
+                <span className="text-gray-800 font-medium">Follow us:</span>
+                <div className="flex gap-3">
+                  <a
+                    href="https://www.instagram.com/petjunction.care/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group p-3 bg-gradient-to-r from-pink-500 to-orange-500 rounded-xl shadow-lg hover:shadow-pink-500/25 transition-all duration-300 transform hover:scale-110"
+                  >
+                    <Instagram className="w-5 h-5 text-white group-hover:animate-bounce" />
+                  </a>
+                  
+                 
+                </div>
               </div>
             </div>
 
             {/* Services */}
-            {/* <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-2">Our Services</h4>
-              <ul className="space-y-1 text-sm">
-                {["Dog Walking", "Dog Grooming", "Dog Boarding", "Dog Training", "Dog Daycare"].map((service) => (
-                  <li key={service}>
-                    <a href="#" className="text-gray-600 hover:text-cyan-500 flex items-center gap-2">
-                      <ExternalLink className="w-4 h-4" />
-                      {service}
-                    </a>
+            <div className="space-y-6 ">
+              <div className="flex items-center gap-2">
+                <Award className="w-6 h-6 text-cyan-400" />
+                <h4 className="text-xl font-bold text-black">Our Services</h4>
+              </div>
+              <ul className="space-y-3">
+                {[
+                  { to: "/dogwalking", name: "Dog Walking", icon: "🚶‍♂️" },
+                  { to: "/doggrooming", name: "Pet Grooming", icon: "✂️" },
+                  { to: "/boarding", name: "Pet Boarding", icon: "🏠" },
+                  { to: "/dogtraining", name: "Pet Training", icon: "🎓" },
+                  { to: "/dogsitting", name: "Pet Sitting", icon: "🐕" },
+                ].map((service, index) => (
+                  <li key={index}>
+                    <Link
+                      to={service.to}
+                      className="group flex items-center gap-3 text-gray-800 hover:text-cyan-400 transition-all duration-300 p-2 rounded-lg hover:bg-white/5"
+                    >
+                      <span className="text-lg">{service.icon}</span>
+                      <span className="font-medium">{service.name}</span>
+                      <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                    </Link>
                   </li>
                 ))}
               </ul>
-            </div> */}
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-4">
-                Quick Links
-              </h4>
-              <div className="flex ml-16 md:ml-0   space-x-4">
-                <Link to="/faq" className="text-gray-600 hover:text-cyan-700">
-                  FAQ's
-                </Link>
-                <Link to="/about" className="text-gray-600 hover:text-cyan-700">
-                  About Us
-                </Link>
-                <Link
-                  to="/contact"
-                  className="text-gray-600 hover:text-cyan-700"
-                >
-                  Contact Us
-                </Link>
-              </div>
             </div>
 
-            {/* Contact Info */}
-            <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-2">
-                Get in Touch
-              </h4>
-              <div className="space-y-2 text-sm">
-                <div className="flex items-center justify-center md:justify-start space-x-2">
-                  <Phone className="w-4 h-4 text-cyan-500" />
-                  <span className="text-gray-600">+919784249525</span>
+            {/* Quick Links & Contact */}
+            <div className="space-y-8">
+              {/* Quick Links */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <Shield className="w-6 h-6 text-purple-400" />
+                  <h4 className="text-xl font-bold text-black">Quick Links</h4>
                 </div>
-                <div className="flex items-center justify-center md:justify-start space-x-2">
-                  <Mail className="w-4 h-4 text-cyan-500" />
-                  <span className="text-gray-600">hello@petjunction.com</span>
-                </div>
-                <div className="flex items-center justify-center md:justify-start space-x-2">
-                  <MapPin className="w-4 h-4 text-cyan-500" />
-                  <span className="text-gray-600">
-                      10, Inspiro Building, New Bhopalpura, Udaipur 
-                  </span>
+                <ul className="space-y-2">
+                  {[
+                    { to: "/faq", name: "FAQ's" },
+                    { to: "/about", name: "About Us" },
+                    { to: "/contact", name: "Contact Us" },
+                  ].map((link, index) => (
+                    <li key={index}>
+                      <Link
+                        to={link.to}
+                        className="text-gray-800 hover:text-purple-400 transition-colors duration-300 font-medium flex items-center gap-2 group"
+                      >
+                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 transition-all duration-300" />
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Contact Info */}
+              <div className="space-y-4">
+                <h4 className="text-xl font-bold text-black flex items-center gap-2">
+                  <Heart className="w-6 h-6 text-pink-400" />
+                  Get in Touch
+                </h4>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 group">
+                    <div className="p-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg">
+                      <Phone className="w-4 h-4 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-gray-800 font-medium">+919784249525</div>
+                      <div className="text-gray-600 text-sm">24/7 Support</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 group">
+                    <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
+                      <Mail className="w-4 h-4 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-gray-800 font-medium text-sm">Care.petjunction@gmail.com</div>
+                      <div className="text-gray-600 text-sm">Quick Response</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3 group">
+                    <div className="p-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg mt-1">
+                      <MapPin className="w-4 h-4 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-gray-800 font-medium text-sm">10, Inspiro Building</div>
+                      <div className="text-gray-600 text-sm">New Bhopalpura, Udaipur</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Bottom Bar */}
-          <div className="mt-8 pt-6 border-t border-gray-200 text-center text-sm text-gray-500">
-            <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-2">
-              <span>
-                © {new Date().getFullYear()} PetJunction. All rights reserved.
-              </span>
-              <div className="flex gap-4">
-                <a href="#" className="hover:text-cyan-500 transition">
-                  Privacy Policy
-                </a>
-                <a href="#" className="hover:text-cyan-500 transition">
-                  Terms of Service
-                </a>
-                <a href="#" className="hover:text-cyan-500 transition">
-                  Sitemap
-                </a>
+          <div className="pt-8 border-t border-white/20">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="flex items-center gap-2 text-gray-800">
+                <Heart className="w-4 h-4 text-pink-400 animate-pulse" />
+                <span className="font-medium">
+                  © {new Date().getFullYear()} PetJunction. Made with love for pets.
+                </span>
+              </div>
+              
+              <div className="flex items-center gap-6">
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  ))}
+                  <span className="text-gray-800 text-sm ml-2">Rated 5/5</span>
+                </div>
+                
+                <div className="flex gap-4 text-sm">
+                  <a href="/sitemap.xml" className="text-gray-400 hover:text-cyan-400 transition-colors font-medium">
+                    Sitemap
+                  </a>
+                </div>
               </div>
             </div>
           </div>

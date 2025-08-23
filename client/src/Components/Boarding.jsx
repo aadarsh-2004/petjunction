@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Check,
   Snowflake,
@@ -14,21 +14,29 @@ import {
   ChevronRight,
   Book,
   AlertCircle,
+  Heart,
+  Shield,
+  Sparkles,
 } from "lucide-react";
-import logo from "../assets/dog.jpg";
 
 const BoardingPage = () => {
   const [selectedTab, setSelectedTab] = useState("requirements");
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   const bookViaWhatsApp = (title, price, features) => {
     const message =
-      encodeURIComponent(`Hello! I'm interested in booking the ${title}  
+      encodeURIComponent(`Hello! I'm interested in booking the ${title} boarding service I saw on your website.
 
-      Service Details:
-      - Features: ${features}
-      - Price: ₹${price}
+Service Details:
+- Features: ${features}
+- Price: ₹${price}
 
-      Could you provide more information about booking?`);
+Could you please provide more information and confirm availability?`);
 
     window.open(`https://wa.me/+919784249525?text=${message}`, "_blank");
   };
@@ -51,10 +59,9 @@ const BoardingPage = () => {
         "Daily photo updates",
       ],
       icon: Snowflake,
-      color: "bg-blue-500",
-      hoverColor: "hover:bg-blue-600",
-      image:
-        "https://storage.googleapis.com/stateless-ceoblognation-com/2024/07/9c210f7c-cover-story-aug-2024-img_2034-scaled.jpg",
+      gradient: "from-blue-500 via-purple-500 to-pink-500",
+      bgGradient: "from-blue-50/80 via-purple-50/80 to-pink-50/80",
+      popular: true,
     },
     {
       title: "Non-AC Boarding",
@@ -73,10 +80,9 @@ const BoardingPage = () => {
         "Weekly photo updates",
       ],
       icon: Fan,
-      color: "bg-green-500",
-      hoverColor: "hover:bg-green-600",
-      image:
-        "https://www.shutterstock.com/image-photo/dog-sitting-front-fan-260nw-665203357.jpg",
+      gradient: "from-emerald-500 via-teal-500 to-cyan-500",
+      bgGradient: "from-emerald-50/80 via-teal-50/80 to-cyan-50/80",
+      popular: false,
     },
   ];
 
@@ -85,37 +91,43 @@ const BoardingPage = () => {
       icon: Clock,
       title: "24/7 Care",
       description: "Round-the-clock supervision",
-      color: "bg-red-100 text-red-600",
+      gradient: "from-red-500 to-orange-500",
+      delay: "delay-100"
     },
     {
       icon: Bath,
       title: "Clean Facilities",
       description: "Daily sanitization",
-      color: "bg-blue-100 text-blue-600",
+      gradient: "from-blue-500 to-cyan-500",
+      delay: "delay-200"
     },
     {
       icon: Coffee,
       title: "Fresh Food & Water",
       description: "Regular meals included",
-      color: "bg-yellow-100 text-yellow-600",
+      gradient: "from-yellow-500 to-amber-500",
+      delay: "delay-300"
     },
     {
       icon: DoorOpen,
       title: "Exercise Areas",
       description: "Indoor & outdoor spaces",
-      color: "bg-purple-100 text-purple-600",
+      gradient: "from-purple-500 to-pink-500",
+      delay: "delay-400"
     },
     {
       icon: Camera,
       title: "Photo Updates",
       description: "Regular pet updates",
-      color: "bg-orange-100 text-orange-600",
+      gradient: "from-orange-500 to-red-500",
+      delay: "delay-500"
     },
     {
       icon: Phone,
       title: "Vet On Call",
       description: "Emergency medical support",
-      color: "bg-green-100 text-green-600",
+      gradient: "from-green-500 to-emerald-500",
+      delay: "delay-600"
     },
   ];
 
@@ -123,10 +135,11 @@ const BoardingPage = () => {
     {
       name: "Vinita Verma",
       pet: "Mark",
-      rating: 4,
+      rating: 5,
       comment:
-        "The AC boarding facility is amazing! Max loved his stay and the staff was incredibly caring.",
-      image: logo,
+        "The AC boarding facility is amazing! Max loved his stay and the staff was incredibly caring. Highly recommended!",
+      avatar: "VV",
+      gradient: "from-pink-400 to-purple-500"
     },
     {
       name: "Arin Wilson",
@@ -134,23 +147,18 @@ const BoardingPage = () => {
       rating: 5,
       comment:
         "Great experience with the non-AC boarding. The ventilation was perfect and Luna was well taken care of.",
-      image: logo,
+      avatar: "AW",
+      gradient: "from-blue-400 to-cyan-500"
     },
     {
       name: "Arman Gupta",
       pet: "Rocky",
       rating: 4,
       comment:
-        "The daily updates and photos gave me peace of mind. Will definitely use again!",
-      image: logo,
+        "The daily updates and photos gave me peace of mind. Will definitely use again for my future trips!",
+      avatar: "AG",
+      gradient: "from-green-400 to-emerald-500"
     },
-  ];
-
-  const galleryImages = [
-    { url: logo, alt: "AC Kennel Interior" },
-    { url: logo, alt: "Play Area" },
-    { url: logo, alt: "Outdoor Space" },
-    { url: logo, alt: "Grooming Station" },
   ];
 
   const requirements = [
@@ -171,197 +179,307 @@ const BoardingPage = () => {
     "Special diet additional charges apply",
   ];
 
+  const faqs = [
+    {
+      question: "What types of pets do you offer boarding for?",
+      answer:
+        "We offer professional boarding services for both **dogs** and **cats**, providing a safe and comfortable environment for all.",
+    },
+    {
+      question: "Do you offer a pet pick and drop service?",
+      answer:
+        "Yes, we provide a convenient **pet pick and drop in Udaipur** to ensure a stress-free experience for you and your pet. Please contact us for details on availability.",
+    },
+    {
+      question: "How is your pet hostel in Udaipur different?",
+      answer:
+        "Our **pet hostel in Udaipur** stands out for its 24/7 supervision, spacious individual kennels, and premium care. We are committed to providing a true home away from home.",
+    },
+    {
+      question: "Can I book a dog boarding service near me?",
+      answer:
+        "Yes, our facility is centrally located, making it easy to find a **dog boarding near me** and get your dog the best care in the area. We also serve pet parents searching for a **cat boarding near me**.",
+    },
+  ];
+
   const tabs = [
-    { id: "requirements", label: "Requirements" },
-    { id: "policies", label: "Policies" },
-    // { id: 'gallery', label: 'Gallery' }
+    { id: "requirements", label: "Requirements", icon: Shield },
+    { id: "policies", label: "Policies", icon: Book },
+    { id: "faqs", label: "FAQs", icon: AlertCircle },
   ];
 
   return (
-    <div className="min-h-screen mt-20 bg-gradient-to-b from-cyan-50 to-white">
-      <div className="container max-w-7xl mx-auto px-6  pb-12 ">
-        <div className="text-center max-w-5xl mx-auto py-14 ">
-          <h1 className="text-4xl font-bold mb-6">
-            Luxury Dog <span className="text-red-500">Boarding</span> Services
-          </h1>
-          <p className="text-gray-600 text-lg mb-8">
-            Give your furry friend a home away from home with our premium
-            boarding facilities.
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-pink-400/20 to-orange-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-cyan-300/10 to-blue-300/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+      </div>
+
+      <div className="relative container max-w-7xl mx-auto px-6 pb-12 pt-20">
+        {/* Hero Section */}
+        <div className={`text-center max-w-6xl mx-auto py-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <div className="relative">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-transparent bg-clip-text animate-pulse">
+                Premium Pet Boarding
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 text-transparent bg-clip-text">
+                Services in Udaipur
+              </span>
+            </h1>
+            <div className="absolute -top-4 -right-4 animate-bounce">
+              <Heart className="w-12 h-12 text-pink-500 fill-current" />
+            </div>
+          </div>
+          <p className="text-xl md:text-2xl text-gray-700 mb-10 max-w-4xl mx-auto leading-relaxed">
+            Give your furry friend a <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">luxury home away from home</span> with our premium boarding facilities. Professional care for both dogs and cats.
           </p>
+          <div className="flex justify-center mb-8">
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-purple-200">
+              <Sparkles className="w-5 h-5 text-yellow-500 animate-pulse" />
+              <span className="text-sm font-semibold text-gray-700">Trusted by 500+ Pet Parents</span>
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-2   md:grid-cols-3 lg:grid-cols-6 gap-6 mb-16">
-          {amenities.map((amenity) => (
+        {/* Amenities Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-20">
+          {amenities.map((amenity, index) => (
             <div
               key={amenity.title}
-              className={`rounded-xl p-6 shadow-xl hover:scale-105 ${amenity.color}`}
+              className={`group bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 border border-gray-200/50 animate-fade-in-up ${amenity.delay}`}
             >
-              <div className="flex flex-col items-center text-center gap-3">
-                <div className="p-3 rounded-lg bg-white">
-                  <amenity.icon className="w-6 h-6" />
+              <div className="flex flex-col items-center text-center gap-4">
+                <div className={`p-4 rounded-2xl bg-gradient-to-r ${amenity.gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <amenity.icon className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">{amenity.title}</h3>
-                  <p className="text-sm">{amenity.description}</p>
+                  <h3 className="font-bold text-gray-800 mb-2">{amenity.title}</h3>
+                  <p className="text-sm text-gray-600">{amenity.description}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16 px-4">
-          {boardingOptions.map((option) => (
+        {/* Boarding Options */}
+        <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto mb-20">
+          {boardingOptions.map((option, index) => (
             <div
               key={option.title}
-              className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-cyan-200 flex flex-col md:flex-row items-center md:items-stretch"
+              className={`group relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-700 overflow-hidden border-2 border-transparent hover:border-gradient-to-r ${option.gradient} transform hover:scale-105`}
+              onMouseEnter={() => setHoveredCard(index)}
+              onMouseLeave={() => setHoveredCard(null)}
             >
-              {/* Dog Image */}
-              <div className="w-full md:w-1/3 bg-gradient-to-r from-cyan-100 via-cyan-50 to-white flex items-center justify-center p-6">
-                {/* <img src={option.image} alt="Dog" className="w-[400px] h-34 rotate-270 rounded-2xl border-4 border-white shadow-md" /> */}
-              </div>
-
-              {/* Content Section */}
-              <div className="w-full md:w-2/3 p-6 flex flex-col justify-between">
-                {/* Title & Pricing */}
-                <div className="flex justify-between items-center">
-                  <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-800">
-                    <option.icon className="w-6 h-6 text-red-500" />
-                    {option.title}
-                  </h2>
+              {option.popular && (
+                <div className="absolute -top-2 -right-2 z-10">
+                  <div className={`bg-gradient-to-r ${option.gradient} text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse`}>
+                    Most Popular ⭐
+                  </div>
+                </div>
+              )}
+              
+              <div className={`absolute inset-0 bg-gradient-to-br ${option.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+              
+              <div className="relative p-8">
+                {/* Header */}
+                <div className="flex justify-between items-start mb-6">
+                  <div className="flex items-center gap-4">
+                    <div className={`p-4 rounded-2xl bg-gradient-to-r ${option.gradient} shadow-lg group-hover:rotate-12 transition-transform duration-500`}>
+                      <option.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div>
+                      <h2 className="text-3xl font-black text-gray-800">{option.title}</h2>
+                      <p className="text-gray-600 font-medium">Premium boarding experience</p>
+                    </div>
+                  </div>
                   <div className="text-right">
-                    <span className="text-3xl font-extrabold text-cyan-600">
+                    <div className={`text-4xl font-black bg-gradient-to-r ${option.gradient} text-transparent bg-clip-text`}>
                       {option.price}
-                    </span>
-                    <p className="text-sm text-gray-500">{option.timeUnit}</p>
+                    </div>
+                    <p className="text-sm text-gray-500 font-medium">{option.timeUnit}</p>
                   </div>
                 </div>
 
-                {/* Features List */}
-                <ul className="space-y-3 my-4">
-                  {option.features.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-orange-500" />
-                      <span className="text-gray-700 text-sm">{feature}</span>
-                    </li>
+                {/* Features */}
+                <div className="space-y-3 mb-8">
+                  {option.features.map((feature, featureIndex) => (
+                    <div
+                      key={featureIndex}
+                      className={`flex items-center gap-3 transform transition-all duration-300 ${hoveredCard === index ? 'translate-x-2' : ''}`}
+                      style={{ transitionDelay: `${featureIndex * 50}ms` }}
+                    >
+                      <div className="p-1 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 shadow-sm">
+                        <Check className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-gray-700 font-medium">{feature}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
 
-                {/* Booking Button */}
+                {/* CTA Button */}
                 <button
-                  onClick={() =>
-                    bookViaWhatsApp(option.title, option.price, option.features)
-                  }
-                  className="w-full py-3 bg-cyan-500 hover:bg-cyan-600 text-white rounded-xl font-semibold flex items-center justify-center gap-2 transition-all transform hover:scale-105 shadow-md"
+                  onClick={() => bookViaWhatsApp(option.title, option.price, option.features.join(", "))}
+                  className={`w-full py-4 bg-gradient-to-r ${option.gradient} text-white rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group-hover:animate-pulse`}
                 >
-                  Book Now
+                  <span className="flex items-center justify-center gap-2">
+                    Book Now
+                    <Heart className="w-5 h-5 group-hover:animate-bounce" />
+                  </span>
                 </button>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="max-w-7xl mx-auto mb-16">
-          <div className="flex gap-4 mb-6 border-b">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setSelectedTab(tab.id)}
-                className={`pb-2 px-4 font-medium transition-colors ${
-                  selectedTab === tab.id
-                    ? "border-b-2 border-blue-500 text-blue-500"
-                    : "text-gray-600 hover:text-blue-500"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-          <div className="bg-white rounded-xl p-6">
-            {selectedTab === "requirements" && (
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold mb-4">
-                  Boarding Requirements
-                </h3>
-                <ul className="space-y-3">
-                  {requirements.map((req, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-green-500" />
-                      <span className="text-gray-600">{req}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {selectedTab === "policies" && (
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold mb-4">
-                  Boarding Policies
-                </h3>
-                <ul className="space-y-3">
-                  {policies.map((policy, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <ChevronRight className="w-5 h-5 text-blue-500" />
-                      <span className="text-gray-600">{policy}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* {selectedTab === 'gallery' && (
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {galleryImages.map((image, index) => (
-                  <div key={index} className="rounded-lg overflow-hidden">
-                    <img src={image.url} alt={image.alt} className="w-full h-full object-cover hover:scale-105 transition-transform" />
+        {/* Info Tabs */}
+        <div className="max-w-6xl mx-auto mb-20">
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-gray-200/50">
+            <div className="flex gap-1 p-2 bg-gradient-to-r from-indigo-50 to-purple-50">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setSelectedTab(tab.id)}
+                  className={`flex-1 py-4 px-6 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 ${
+                    selectedTab === tab.id
+                      ? "bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg transform scale-105"
+                      : "text-gray-600 hover:bg-white/50 hover:scale-102"
+                  }`}
+                >
+                  <tab.icon className="w-5 h-5" />
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+            
+            <div className="p-8">
+              {selectedTab === "requirements" && (
+                <div className="space-y-6 animate-fade-in">
+                  <h3 className="text-2xl font-black text-gray-800 flex items-center gap-3">
+                    <Shield className="w-7 h-7 text-indigo-500" />
+                    Boarding Requirements
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {requirements.map((req, index) => (
+                      <div key={index} className="flex items-center gap-3 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200/50">
+                        <Check className="w-6 h-6 text-green-500 flex-shrink-0" />
+                        <span className="text-gray-700 font-medium">{req}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            )} */}
+                </div>
+              )}
+
+              {selectedTab === "policies" && (
+                <div className="space-y-6 animate-fade-in">
+                  <h3 className="text-2xl font-black text-gray-800 flex items-center gap-3">
+                    <Book className="w-7 h-7 text-purple-500" />
+                    Boarding Policies
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {policies.map((policy, index) => (
+                      <div key={index} className="flex items-center gap-3 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200/50">
+                        <ChevronRight className="w-6 h-6 text-purple-500 flex-shrink-0" />
+                        <span className="text-gray-700 font-medium">{policy}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {selectedTab === "faqs" && (
+                <div className="space-y-6 animate-fade-in">
+                  <h3 className="text-2xl font-black text-gray-800 flex items-center gap-3">
+                    <AlertCircle className="w-7 h-7 text-orange-500" />
+                    Frequently Asked Questions
+                  </h3>
+                  <div className="space-y-4">
+                    {faqs.map((faq, index) => (
+                      <div key={index} className="p-6 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl border border-orange-200/50 hover:shadow-lg transition-shadow duration-300">
+                        <h4 className="font-bold text-gray-800 mb-3 text-lg">{faq.question}</h4>
+                        <p className="text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer.replace(/\*\*(.*?)\*\*/g, '<span class="font-semibold text-orange-600">$1</span>') }}></p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto my-4">
-          <h2 className="text-2xl font-bold mb-8 text-center">
-            Happy Pet Parents
-          </h2>
-          <div className=" grid grid-cols-2 md:grid-cols-3 gap-6">
+        {/* Testimonials */}
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-gray-800 mb-4">Happy Pet Parents</h2>
+            <p className="text-xl text-gray-600">See what our community says about us</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md"
+                className="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200/50 transform hover:scale-105 hover:-rotate-1"
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full"
-                  />
+                <div className="flex items-center gap-4 mb-6">
+                  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${testimonial.gradient} flex items-center justify-center shadow-lg group-hover:animate-pulse`}>
+                    <span className="text-white font-bold text-lg">{testimonial.avatar}</span>
+                  </div>
                   <div>
-                    <h3 className="font-semibold">{testimonial.name}</h3>
-                    <p className="text-sm text-gray-600">
-                      Pet: {testimonial.pet}
-                    </p>
+                    <h4 className="font-bold text-gray-800 text-lg">{testimonial.name}</h4>
+                    <p className="text-gray-600">Pet Parent of {testimonial.pet}</p>
                   </div>
                 </div>
-                <div className="flex mb-3">
+                <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-400" />
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-xs  text-gray-600">{testimonial.comment}</p>
+                <p className="text-gray-700 leading-relaxed italic">"{testimonial.comment}"</p>
               </div>
             ))}
           </div>
         </div>
-
-        {/* <div className="fixed bottom-6 right-6 z-50">
-          <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full p-4 flex items-center gap-2">
-            <Book className="w-6 h-6" />
-            <span className="font-medium">Quick Book</span>
-          </button>
-        </div> */}
       </div>
+
+      <style jsx>{`
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        
+        .animate-fade-in-up {
+          animation: fade-in-up 0.6s ease-out forwards;
+        }
+        
+        .animate-fade-in {
+          animation: fade-in 0.5s ease-out forwards;
+        }
+        
+        .hover\:scale-102:hover {
+          transform: scale(1.02);
+        }
+        
+        .hover\:shadow-3xl:hover {
+          box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+        }
+      `}</style>
     </div>
   );
 };
