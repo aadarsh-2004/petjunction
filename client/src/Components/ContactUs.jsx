@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
-
+import SEO from '../SEO';
 const ContactUs = () => {
   
   
@@ -9,6 +9,13 @@ const ContactUs = () => {
     }, []);
   
   return (
+    <>
+    <SEO
+        title="Contact PetJunction | Pet Services in Udaipur"
+        description="Get in touch with PetJunction for dog walking, grooming, boarding & training in Udaipur. Call or book your pet’s service todays"
+        canonical="https://www.petjunction.in/contact"
+      />
+    
     <div className="max-w-4xl mt-24 mx-auto p-6">
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4 text-cyan-700">Contact Us</h1>
@@ -85,6 +92,7 @@ const ContactUs = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

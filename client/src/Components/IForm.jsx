@@ -79,7 +79,7 @@ ${selectedServiceNames}
       <SEO
         title="Book Your Pet Service Appointment | PetJunction"
         description="Easily book your pet's appointment for professional dog training, grooming, and boarding with PetJunction in Udaipur. Fill out our simple inquiry form to get started."
-        canonical="https://www.petjunction.in/IForm"
+        canonical="https://www.petjunction.in/Iform"
       />
       <div className="relative max-w-4xl mt-24 mx-auto p-8 bg-white rounded-xl shadow-lg overflow-hidden">
         {/* Animated Background Elements */}

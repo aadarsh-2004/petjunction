@@ -78,9 +78,9 @@ Could you provide more information about booking?`);
   return (
     <>
       <SEO
-        title="Dog Walking & Pet Taxi in Udaipur | Pet Pick and Drop Service"
-        description="Looking for professional dog walking or pet pick and drop services in Udaipur? We are a reliable pet walking daily service provider offering safe and fun walks for your pet. Book a pet service appointment today."
-        canonical="https://www.petjunction.in/dog-walking"
+        title="Dog Walking Services in Udaipur | Daily Walks & Exercise"
+        description="Affordable dog walking in Udaipur. Reliable daily pet walking with safe, fun, and healthy walks for your pets"
+        canonical="https://www.petjunction.in/dogwalking"
       />
       <div className="max-w-6xl mt-24 mx-auto p-6">
         {/* Hero Section */}

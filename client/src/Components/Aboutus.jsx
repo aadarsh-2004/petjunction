@@ -14,7 +14,7 @@ const Aboutus = () => {
       <SEO
         title="About Our Pet Services in Udaipur | PetJunction"
         description="Learn about PetJunction's story, mission, and commitment to professional pet care in Udaipur. We are passionate about providing expert dog training, grooming, and pet boarding services for your furry friends."
-        canonical="https://www.petjunction.in/aboutus"
+        canonical="https://www.petjunction.in/about"
       />
       <div className="max-w-4xl mt-25 mb-28 mx-auto p-6">
         <div className="text-center mb-8">

@@ -77,9 +77,9 @@ Please help me schedule an appointment.`;
   return (
     <>
       <SEO
-        title="Professional Pet Grooming in Udaipur | Dog & Cat Spa"
+        title="Dog Grooming in Udaipur | Dog & Cat Spa"
         description="Looking for professional pet grooming in Udaipur? Our certified groomers offer dog grooming, cat grooming, and full-service pet spa packages. Book a pet service appointment today."
-        canonical="https://www.petjunction.in/dog-grooming"
+        canonical="https://www.petjunction.in/doggrooming"
       />
       <div className="relative max-w-6xl mt-24 mx-auto p-6">
         <div className="relative">

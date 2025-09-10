@@ -59,9 +59,9 @@ Could you provide more information about booking?`);
   return (
     <>
       <SEO
-        title="Dog Sitting & Pet Boarding in Udaipur | Dog Hostel & Pet Care"
-        description="Looking for professional dog sitting or pet boarding services in Udaipur? We offer safe, loving dog daycare, overnight stays, and an extended pet hostel for dogs and cats. Book a pet service appointment today."
-        canonical="https://www.petjunction.in/dog-sitting"
+        title="Dog Sitting Services in Udaipur | At-Home Pet Care by PetJunction"
+        description="Professional dog sitting in Udaipur. PetJunction provides loving, reliable at-home pet care so your pets stay happy and stress-free."
+        canonical="https://www.petjunction.in/dogsitting"
       />
       <div className="max-w-6xl mt-24 mx-auto p-6">
         {/* Hero Section */}

@@ -81,7 +81,7 @@ Could you please help me schedule my first session?`);
       <SEO
         title="Dog Training in Udaipur | Professional Dog Trainer & Puppy Training"
         description="Looking for professional dog training in Udaipur? Our expert trainers offer personalized dog training, puppy training, and cat training programs. Find the best dog trainer near you."
-        canonical="https://www.petjunction.in/dog-training"
+        canonical="https://www.petjunction.in/dogtraining"
       />
       <div className="max-w-6xl mt-24 mx-auto p-6">
         <div className="text-center mb-12">
