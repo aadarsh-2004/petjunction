@@ -19,35 +19,35 @@ const HeroSection = () => {
             icon: "🦮",
             name: "Dog Training",
             description: "Expert obedience & behavior training",
-            link: "/dogtraining",
+            link: "/dog-training",
             gradient: "from-blue-500 to-indigo-600",
         },
         {
             icon: "🚶",
             name: "Dog Walking",
             description: "Daily walks & exercise for happy pups",
-            link: "/dogwalking",
+            link: "/dog-walking",
             gradient: "from-green-500 to-emerald-600",
         },
         {
             icon: "✂️",
             name: "Dog Grooming",
             description: "Professional grooming & spa services",
-            link: "/doggrooming",
+            link: "/dog-grooming",
             gradient: "from-purple-500 to-pink-600",
         },
         {
             icon: "🏠",
             name: "Dog Boarding",
             description: "Safe & comfortable overnight stays",
-            link: "/boarding", // Corrected link
+            link: "/dog-boarding", // Corrected link
             gradient: "from-orange-500 to-red-600",
         },
         {
             icon: "💝",
             name: "Dog Sitting",
             description: "Personalized care at home",
-            link: "/dogsitting",
+            link: "/dog-sitting",
             gradient: "from-yellow-500 to-orange-600",
         },
     ];
@@ -92,8 +92,8 @@ const HeroSection = () => {
                 />
             </div>
             
-            <div className="relative z-10 px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-20">
-                <div className="max-w-7xl mx-auto">
+            <div className="relative z-10 px-4 sm:px-6 mt-20 md:mt-0 lg:px-16 py-8 sm:py-12 lg:py-20">
+                <div className="max-w-7xl mx-3 md:mx-auto">
                     <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                         {/* Left Content */}
                         <motion.div
@@ -107,7 +107,7 @@ const HeroSection = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
-                                className="flex flex-col sm:flex-row gap-2 sm:gap-4"
+                                className="flex flex-row sm:flex-row gap-2 sm:gap-4"
                             >
                                 <div className="bg-white/80 backdrop-blur-sm shadow-lg border border-white/50 rounded-xl sm:rounded-2xl px-3 sm:px-6 py-2 sm:py-3 flex items-center gap-2 sm:gap-3 hover:shadow-xl transition-shadow">
                                     <div className="flex">
@@ -128,9 +128,9 @@ const HeroSection = () => {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.3 }}
-                                className="space-y-3 sm:space-y-6"
+                                className="space-y-3 sm:space-y-6 "
                             >
-                                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black leading-tight">
+                                <h1 className="text-4xl sm:text-5xl md:text-4xl lg:text-6xl font-black leading-tight">
                                     <span className="block">Where Your Pet's</span>
                                     <span className="bg-gradient-to-r from-red-500 via-pink-500 to-orange-500 text-transparent bg-clip-text animate-pulse">
                                         Adventure
@@ -142,7 +142,7 @@ const HeroSection = () => {
                                 
                                 <div className="flex items-center gap-2">
                                     <Sparkles className="w-4 sm:w-6 h-4 sm:h-6 text-yellow-500 animate-pulse" />
-                                    <span className="text-sm sm:text-lg font-semibold text-gray-600">Premium Pet Care Services in Udaipur</span>
+                                    <span className="text-sm sm:text-lg font-semibold text-gray-600">Professional Pet Care Services in Udaipur</span>
                                 </div>
                             </motion.div>
 
@@ -151,7 +151,7 @@ const HeroSection = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.4 }}
-                                className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl"
+                                className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-xl"
                             >
                                 Join the PetJunction family! We provide tail-wagging{" "}
                                 <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
@@ -188,9 +188,9 @@ const HeroSection = () => {
                                     }}
                                 >
                                     <img 
-                                        src="/petjunction.png" 
+                                        src="https://res.cloudinary.com/ddbu8cm4z/image/upload/v1761398574/petjunction_wp4s4m.png" 
                                         alt="PetJunction Logo - Dog and cat illustration" 
-                                        className="h-32 sm:h-40 md:h-48 w-auto drop-shadow-2xl" 
+                                        className="h-45 sm:h-40 md:h-48 w-auto drop-shadow-2xl" 
                                     />
                                 </motion.div>
 
@@ -198,7 +198,7 @@ const HeroSection = () => {
                                 <motion.div
                                     animate={{ y: [-6, 6, -6] }}
                                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                    className="absolute -right-2 sm:-right-6 top-2 sm:top-4"
+                                    className="hidden -right-2 sm:-right-6 top-2 sm:top-4"
                                 >
                                     <FloatingCard icon={Heart} title="Loving Care" color="bg-gradient-to-r from-red-500 to-pink-500" delay={0.8} />
                                 </motion.div>
@@ -206,7 +206,7 @@ const HeroSection = () => {
                                 <motion.div
                                     animate={{ y: [6, -6, 6] }}
                                     transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                                    className="absolute -left-2 sm:-left-6 bottom-4 sm:bottom-8"
+                                    className="hidden -left-2 sm:-left-6 bottom-4 sm:bottom-8"
                                 >
                                     <FloatingCard icon={Shield} title="Safe & Secure" color="bg-gradient-to-r from-cyan-500 to-blue-500" delay={1} />
                                 </motion.div>
@@ -245,7 +245,7 @@ const HeroSection = () => {
                                     }}
                                 >
                                     <img 
-                                        src="/petjunction.png" 
+                                        src="https://res.cloudinary.com/ddbu8cm4z/image/upload/v1761398574/petjunction_wp4s4m.png" 
                                         alt="PetJunction Logo with a dog and cat" 
                                         className="h-80 w-auto drop-shadow-2xl" 
                                     />
@@ -358,7 +358,7 @@ const HeroSection = () => {
                         </div>
                         
                         {/* CTA Button - Mobile responsive */}
-                        <Link to="/IForm"> {/* Updated to use Link */}
+                        <Link to="/inquiry-form"> {/* Updated to use Link */}
                             <motion.button
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}

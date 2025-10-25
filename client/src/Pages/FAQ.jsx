@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { Mail, Phone, MapPin, HandHeart } from 'lucide-react';
-import SEO from '../SEO';
+import { Helmet } from "react-helmet-async";
+
 
 const FAQ = () => {
   useEffect(() => {
@@ -45,11 +45,38 @@ const FAQ = () => {
 
   return (
     <>
-      <SEO
-        title="FAQ | Pet Services in Udaipur | Pet Junction"
-        description="Find answers to frequently asked questions about our pet boarding, dog training, pet grooming, and pet taxi services in Udaipur. We are the trusted choice for pet care specialists."
-        canonical="https://www.petjunction.in/faq"
-      />
+      
+
+
+      <Helmet>
+      <title>FAQs | Pet Care, Boarding & Grooming in Udaipur | PetJunction</title>
+
+<meta
+  name="description"
+  content="Get answers to common questions about PetJunction's pet boarding, dog training, pet grooming, and pet taxi services in Udaipur. Learn how we care for your pets with love and safety."
+/>
+
+<meta
+  name="keywords"
+  content="pet boarding FAQs Udaipur, dog grooming FAQs Udaipur, pet training FAQs Udaipur, pet taxi Udaipur questions, pet care in Udaipur, PetJunction FAQs, pet boarding near me FAQs, pet grooming near me FAQs"
+/>
+
+<link rel="canonical" href="https://www.petjunction.in/faq" />
+
+{/* <!-- OpenGraph --> */}
+<meta property="og:title" content="FAQs | Pet Care, Boarding & Grooming in Udaipur | PetJunction" />
+<meta property="og:description" content="Find answers to frequently asked questions about our pet boarding, grooming, and dog training services in Udaipur. Learn how PetJunction ensures your pet’s comfort and safety." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.petjunction.in/faq" />
+<meta property="og:site_name" content="PetJunction" />
+
+{/* <!-- Twitter --> */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="FAQs | Pet Care, Boarding & Grooming in Udaipur | PetJunction" />
+<meta name="twitter:description" content="Get answers about pet care, grooming, and boarding services in Udaipur with PetJunction." />
+      
+            </Helmet>
+
       <div className="max-w-6xl mt-24 mx-auto p-6">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">

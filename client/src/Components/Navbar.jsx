@@ -8,27 +8,34 @@ const services = [
   {
     title: "Dog Walking",
     description: "Daily walks and exercise",
+    icon: "🚶",
+    link:"/dog-walking"
+    
+  },
+  {
+    title: "Dog Training",
+    description: "Train you dog",
     icon: "🦮",
-    link:"/dogwalking"
+    link:"/dog-training"
     
   },
   {
     title: "Dog Grooming",
     description: "Professional grooming services",
     icon: "✂️",
-    link:"/doggrooming"
+    link:"/dog-grooming"
   },
   {
     title: "Dog Boarding",
     description: "Comfortable overnight stays",
     icon: "🏠",
-    link:"/boarding"
+    link:"/dog-boarding"
   },
   {
     title: "Dog Sitting",
     description: "In-home pet care",
     icon: "💝",
-    link:"/dogsitting"
+    link:"/dog-sitting"
   }
 ];
 
@@ -41,13 +48,13 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50  backdrop-blur-3xl">
+    <nav className="fixed top-0 left-0 right-0 z-50  backdrop-blur-3xl">
       <div className="container mx-auto">
         <nav className="flex items-center justify-between h-20 px-4">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <img 
-              src={logo} 
+              src="https://res.cloudinary.com/ddbu8cm4z/image/upload/v1761398574/petjunction_wp4s4m.png" 
               alt="PetJunction"
               className="h-16 w-auto"
             />
@@ -140,13 +147,13 @@ const Navbar = () => {
               {activeDropdown === 'support' && (
                 <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border">
                   <div className="py-2">
-                    <Link to="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50">
+                    <Link to="/contact-us" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50">
                       Contact Us
                     </Link>
                     <Link to="/faq" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50">
                       FAQ
                     </Link>
-                    <Link to="/about" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50">
+                    <Link to="/about-us" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50">
                       About Us
                     </Link>
                   </div>
@@ -155,7 +162,7 @@ const Navbar = () => {
             </div>
 
             {/* Call to Action Button */}
-            <Link to="/Iform">
+            <Link to="/inquiry-form">
             <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md transition-shadow">
               Book Now
             </button>
@@ -235,21 +242,21 @@ const Navbar = () => {
 
                 {activeDropdown === 'mobileSupport' && (
                   <div className="pl-4 space-y-2">
-                    <Link to="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50 rounded-lg">
+                    <Link to="/contact-us" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50 rounded-lg">
                       Contact Us
                     </Link>
                     <Link to="/faq" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50 rounded-lg">
                       FAQ
                     </Link>
-                    <Link to="/help" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50 rounded-lg">
-                      Help Center
+                    <Link to="/about-us" className="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50 rounded-lg">
+                      About us
                     </Link>
                   </div>
                 )}
               </div>
 
               {/* Mobile Call to Action Button */}
-               <Link to="/Iform">
+               <Link to="/inquiry-form">
               <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md transition-shadow w-full">
                 Book Now
               </button>
@@ -258,7 +265,7 @@ const Navbar = () => {
           </div>
         )}
       </div>
-    </header>
+    </nav>
   );
 };
 

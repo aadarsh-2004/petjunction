@@ -10,7 +10,7 @@ import {
   Footprints,
   Smile,
 } from "lucide-react";
-import SEO from '../SEO';
+import { Helmet } from "react-helmet-async";
 
 const DogWalking = () => {
   useEffect(() => {
@@ -69,7 +69,7 @@ Could you provide more information about booking?`);
   ];
 
   const features = [
-    { icon: Footprints , title: "Daily Exercise", description: "Regular walks are essential for your pet's physical and mental health. We ensure your dog gets the exercise they need.", color: "text-cyan-500" },
+    { icon: Footprints, title: "Daily Exercise", description: "Regular walks are essential for your pet's physical and mental health. We ensure your dog gets the exercise they need.", color: "text-cyan-500" },
     { icon: ShieldCheck, title: "Trusted Professionals", description: "All our walkers are background-checked and trained to handle dogs of all sizes and temperaments. Your pet's safety is our priority.", color: "text-blue-500" },
     { icon: Bus, title: "Pet Pick & Drop Service", description: "We offer a convenient pet pick and drop service, so you don't have to worry about transportation. We are your reliable pet taxi in Udaipur.", color: "text-green-500" },
     { icon: MapPin, title: "Customized Routes", description: "We tailor each walk to your dog's preferences, whether it's a park stroll, a trail hike, or a neighborhood adventure.", color: "text-fuchsia-500" },
@@ -77,11 +77,34 @@ Could you provide more information about booking?`);
 
   return (
     <>
-      <SEO
-        title="Dog Walking Services in Udaipur | Daily Walks & Exercise"
-        description="Affordable dog walking in Udaipur. Reliable daily pet walking with safe, fun, and healthy walks for your pets"
-        canonical="https://www.petjunction.in/dogwalking"
-      />
+
+      <Helmet>
+        <title>Dog Walking in Udaipur | Trusted Pet Walkers Near You | PetJunction</title>
+
+        <meta
+          name="description"
+          content="Looking for professional dog walking in Udaipur? PetJunction offers reliable, safe, and fun daily walks for your pets. Book expert pet walkers for regular exercise and care today!"
+        />
+
+        <meta
+          name="keywords"
+          content="dog walking in Udaipur, pet walking in Udaipur, dog walkers near me, daily dog walking Udaipur, professional dog walkers Udaipur, pet exercise service Udaipur, PetJunction dog walking, pet walking service near me"
+        />
+
+        <link rel="canonical" href="https://www.petjunction.in/dog-walking" />
+
+        {/* <!-- OpenGraph --> */}
+        <meta property="og:title" content="Dog Walking in Udaipur | Trusted Pet Walkers Near You | PetJunction" />
+        <meta property="og:description" content="Reliable and professional dog walking services in Udaipur. Let PetJunction take your pet on safe, fun, and healthy walks every day." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.petjunction.in/dog-walking" />
+        <meta property="og:site_name" content="PetJunction" />
+
+        {/* <!-- Twitter --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Dog Walking in Udaipur | Trusted Pet Walkers Near You | PetJunction" />
+        <meta name="twitter:description" content="Safe, reliable, and fun dog walking services in Udaipur with PetJunction. Book your pet’s daily walks today!" />
+      </Helmet>
       <div className="max-w-6xl mt-24 mx-auto p-6">
         {/* Hero Section */}
         <div className="text-center mb-12">

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { BookOpen, Shield, Award, ChevronDown, Compass, UserCheck, Star } from 'lucide-react';
-import SEO from '../SEO'; // Assuming you have a reusable SEO component
+import { Helmet } from "react-helmet-async";
 
 const DogTraining = () => {
   useEffect(() => {
@@ -69,7 +69,7 @@ Could you please help me schedule my first session?`);
       answer: "Yes, our **Behavior Correction** sessions are tailored to address specific problems like excessive barking, leash pulling, or anxiety. We work closely with you to find the best solutions for your pet."
     },
   ];
-  
+
   const features = [
     { icon: Compass, title: 'Experienced Trainers', description: 'Our certified **dog trainers** have years of experience with all breeds.', color: 'text-orange-500' },
     { icon: UserCheck, title: 'Customized Plans', description: 'Training plans tailored to your dog’s specific needs and personality.', color: 'text-purple-500' },
@@ -78,11 +78,44 @@ Could you please help me schedule my first session?`);
 
   return (
     <>
-      <SEO
-        title="Dog Training in Udaipur | Professional Dog Trainer & Puppy Training"
-        description="Looking for professional dog training in Udaipur? Our expert trainers offer personalized dog training, puppy training, and cat training programs. Find the best dog trainer near you."
-        canonical="https://www.petjunction.in/dogtraining"
-      />
+
+
+      <Helmet>
+        {/* ---------- Primary Meta Tags ---------- */}
+        <title>Dog Training in Udaipur | Professional Dog Trainer & Puppy Training</title>
+        <meta
+          name="description"
+          content="Get expert dog training in Udaipur with PetJunction. Our certified trainers provide personalized obedience training, puppy behavior correction, and socialization programs for all breeds."
+        />
+        <meta
+          name="keywords"
+          content="dog training in udaipur, puppy training udaipur, professional dog trainer udaipur, pet training in udaipur, cat training in udaipur, pet behavior training udaipur, best dog trainer near me"
+        />
+        <link rel="canonical" href="https://www.petjunction.in/dog-training" />
+
+        {/* ---------- Open Graph / Facebook ---------- */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Dog Training in Udaipur | Professional Dog Trainer & Puppy Training" />
+        <meta
+          property="og:description"
+          content="Looking for expert dog trainers in Udaipur? PetJunction offers professional puppy training, obedience sessions, and personalized behavior correction programs."
+        />
+        <meta property="og:url" content="https://www.petjunction.in/dog-training" />
+        <meta property="og:site_name" content="PetJunction" />
+        {/* <meta property="og:image" content="https://www.petjunction.in/assets/images/dog-training-cover.jpg" /> */}
+        <meta property="og:image:alt" content="Professional Dog Training in Udaipur - PetJunction" />
+
+        {/* ---------- Twitter Card ---------- */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Dog Training in Udaipur | Professional Dog Trainer & Puppy Training" />
+        <meta
+          name="twitter:description"
+          content="Get reliable dog training in Udaipur with PetJunction. Expert trainers for puppy obedience, behavior correction, and leash training."
+        />
+        {/* <meta name="twitter:image" content="https://www.petjunction.in/assets/images/dog-training-cover.jpg" /> */}
+        <meta name="twitter:image:alt" content="Dog Training in Udaipur - PetJunction" />
+      </Helmet>
+
       <div className="max-w-6xl mt-24 mx-auto p-6">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
@@ -95,7 +128,7 @@ Could you please help me schedule my first session?`);
             Find the perfect <span className='font-bold  bg-gradient-to-r from-teal-500 to-emerald-600 text-transparent bg-clip-text'>dog trainer</span> for your pet with our professional <span className='font-bold'>dog training in Udaipur</span> programs, designed to transform behavior and strengthen your bond.
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => (
             <div key={index} className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
@@ -120,7 +153,7 @@ Could you please help me schedule my first session?`);
                   {program.sessions === "Per Session" ? "/session" : " total"}
                 </span>
               </p>
-              <button 
+              <button
                 onClick={() => enrollViaWhatsApp(program.plan, program.price, program.sessions)}
                 className="w-full bg-orange-600 text-white py-3 rounded-xl font-semibold hover:bg-orange-700 transition-colors shadow-md"
               >
@@ -152,7 +185,7 @@ Could you please help me schedule my first session?`);
           <p className="text-gray-200 mb-6">
             Contact a **dog trainer near me** to get started with a customized plan.
           </p>
-          <button 
+          <button
             onClick={() => enrollViaWhatsApp('Basic Obedience Training', '3,500', '4 Sessions')}
             className="bg-white text-teal-800 py-3 px-6 rounded-xl font-semibold hover:bg-teal-100 transition-colors shadow-md"
           >

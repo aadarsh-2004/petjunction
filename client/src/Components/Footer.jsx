@@ -100,11 +100,11 @@ const Footer = () => {
               </div>
               <ul className="space-y-3">
                 {[
-                  { to: "/dogwalking", name: "Dog Walking", icon: "🚶‍♂️" },
-                  { to: "/doggrooming", name: "Pet Grooming", icon: "✂️" },
-                  { to: "/boarding", name: "Pet Boarding", icon: "🏠" },
-                  { to: "/dogtraining", name: "Pet Training", icon: "🎓" },
-                  { to: "/dogsitting", name: "Pet Sitting", icon: "🐕" },
+                  { to: "/dog-walking", name: "Dog Walking", icon: "🚶‍♂️" },
+                  { to: "/dog-grooming", name: "Pet Grooming", icon: "✂️" },
+                  { to: "/dog-boarding", name: "Pet Boarding", icon: "🏠" },
+                  { to: "/dog-training", name: "Pet Training", icon: "🎓" },
+                  { to: "/dog-sitting", name: "Pet Sitting", icon: "🐕" },
                 ].map((service, index) => (
                   <li key={index}>
                     <Link
@@ -131,8 +131,8 @@ const Footer = () => {
                 <ul className="space-y-2">
                   {[
                     { to: "/faq", name: "FAQ's" },
-                    { to: "/about", name: "About Us" },
-                    { to: "/contact", name: "Contact Us" },
+                    { to: "/about-us", name: "About Us" },
+                    { to: "/contact-us", name: "Contact Us" },
                   ].map((link, index) => (
                     <li key={index}>
                       <Link
@@ -196,8 +196,11 @@ const Footer = () => {
                 <span className="font-medium">
                   © {new Date().getFullYear()} PetJunction. Made with love for pets.
                 </span>
+                
               </div>
-              
+              <span className="font-medium text-gray-800">
+                  Developed by <a className="text-orange-500" href="https://www.beeztech.studio/">beeztech.studio</a>
+                </span>
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (

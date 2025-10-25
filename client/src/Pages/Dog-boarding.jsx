@@ -18,7 +18,7 @@ import {
   Shield,
   Sparkles,
 } from "lucide-react";
-import SEO from '../SEO';
+import { Helmet } from "react-helmet-async";
 const BoardingPage = () => {
   const [selectedTab, setSelectedTab] = useState("requirements");
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -210,11 +210,33 @@ Could you please provide more information and confirm availability?`);
 
   return (
     <>
-      <SEO
-        title="Dog Boarding in Udaipur | Safe Overnight Pet Stay at PetJunction"
-        description="Looking for dog boarding in Udaipur? PetJunction offers safe, comfortable, and affordable overnight stays for pets with round-the-clock care."
-        canonical="https://www.petjunction.in/boarding"
-      />
+
+
+      <Helmet>
+        {/* <!-- Primary SEO --> */}
+        <title>Dog & Cat Boarding in Udaipur | AC & Non-AC Overnight Pet Stay at PetJunction</title>
+        <meta name="description" content="Looking for dog or cat boarding in Udaipur? PetJunction offers safe, comfortable AC and Non-AC overnight stays for pets with 24/7 care, loving attention, and secure facilities. Book your pet's stay today!" />
+        <meta name="keywords" content="dog boarding Udaipur, cat boarding Udaipur, AC pet boarding Udaipur, Non-AC pet boarding Udaipur, overnight pet stay Udaipur, pet hotel Udaipur, dog hostel Udaipur, cat hostel Udaipur, pet boarding near me, dog boarding near me, cat boarding near me, safe pet boarding Udaipur, pet care services Udaipur" />
+        <link rel="canonical" href="https://www.petjunction.in/dog-boarding" />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:title" content="Dog & Cat Boarding in Udaipur | AC & Non-AC Overnight Pet Stay at PetJunction" />
+        <meta property="og:description" content="Looking for dog or cat boarding in Udaipur? PetJunction offers safe, comfortable AC and Non-AC overnight stays for pets with 24/7 care, loving attention, and secure facilities. Book your pet's stay today!" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.petjunction.in/dog-boarding" />
+        {/* <meta property="og:image" content="https://www.petjunction.in/assets/images/dog-boarding-og.jpg" /> */}
+        <meta property="og:site_name" content="PetJunction" />
+
+        {/* <!-- Twitter Card --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Dog & Cat Boarding in Udaipur | AC & Non-AC Overnight Pet Stay at PetJunction" />
+        <meta name="twitter:description" content="Looking for dog or cat boarding in Udaipur? PetJunction offers safe, comfortable AC and Non-AC overnight stays for pets with 24/7 care, loving attention, and secure facilities. Book your pet's stay today!" />
+        {/* <meta name="twitter:image" content="https://www.petjunction.in/assets/images/dog-boarding-og.jpg" /> */}
+        <meta name="twitter:site" content="@PetJunction" />
+
+
+      </Helmet>
+
       <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
@@ -226,11 +248,10 @@ Could you please provide more information and confirm availability?`);
         <div className="relative container max-w-7xl mx-auto px-6 pb-12 pt-20">
           {/* Hero Section */}
           <div
-            className={`text-center max-w-6xl mx-auto py-16 transform transition-all duration-1000 ${
-              isVisible
+            className={`text-center max-w-6xl mx-auto py-16 transform transition-all duration-1000 ${isVisible
                 ? "translate-y-0 opacity-100"
                 : "translate-y-10 opacity-0"
-            }`}
+              }`}
           >
             <div className="relative">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
@@ -348,9 +369,8 @@ Could you please provide more information and confirm availability?`);
                     {option.features.map((feature, featureIndex) => (
                       <div
                         key={featureIndex}
-                        className={`flex items-center gap-3 transform transition-all duration-300 ${
-                          hoveredCard === index ? "translate-x-2" : ""
-                        }`}
+                        className={`flex items-center gap-3 transform transition-all duration-300 ${hoveredCard === index ? "translate-x-2" : ""
+                          }`}
                         style={{ transitionDelay: `${featureIndex * 50}ms` }}
                       >
                         <div className="p-1 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 shadow-sm">
@@ -392,11 +412,10 @@ Could you please provide more information and confirm availability?`);
                   <button
                     key={tab.id}
                     onClick={() => setSelectedTab(tab.id)}
-                    className={`flex-1 py-4 px-6 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 ${
-                      selectedTab === tab.id
+                    className={`flex-1 py-4 px-6 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 ${selectedTab === tab.id
                         ? "bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg transform scale-105"
                         : "text-gray-600 hover:bg-white/50 hover:scale-102"
-                    }`}
+                      }`}
                   >
                     <tab.icon className="w-5 h-5" />
                     {tab.label}

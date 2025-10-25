@@ -180,7 +180,7 @@ const Gallery = () => {
             <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
               Book our services and get professional photos of your furry friend!
             </p>
-            <a href="/IForm">
+            <a href="/inquiry-form">
               <button className="bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base flex items-center justify-center gap-2 sm:gap-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 mx-auto">
                 <Camera className="w-4 sm:w-5 h-4 sm:h-5" />
                 Book Photo Session

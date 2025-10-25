@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Send, MessageCircle, PawPrint, Phone, User, Mail, Heart } from 'lucide-react';
-import SEO from "../SEO";
+import { Helmet } from "react-helmet-async";
 
 const IForm = () => {
   useEffect(() => {
@@ -76,11 +76,37 @@ ${selectedServiceNames}
 
   return (
     <>
-      <SEO
-        title="Book Your Pet Service Appointment | PetJunction"
-        description="Easily book your pet's appointment for professional dog training, grooming, and boarding with PetJunction in Udaipur. Fill out our simple inquiry form to get started."
-        canonical="https://www.petjunction.in/Iform"
-      />
+      
+      <Helmet>
+        <title>Book Pet Boarding, Grooming & Training in Udaipur | PetJunction</title>
+
+<meta
+  name="description"
+  content="Book professional pet services in Udaipur with PetJunction. Schedule dog grooming, pet boarding, or dog training easily through our online inquiry form. Quick response guaranteed!"
+/>
+
+<meta
+  name="keywords"
+  content="book pet service Udaipur, dog grooming booking Udaipur, pet boarding booking Udaipur, dog training booking Udaipur, pet appointment Udaipur, pet inquiry form, book pet service near me, PetJunction booking"
+/>
+
+<link rel="canonical" href="https://www.petjunction.in/inquiry-form" />
+
+{/* <!-- OpenGraph --> */}
+<meta property="og:title" content="Book Pet Boarding, Grooming & Training in Udaipur | PetJunction" />
+<meta property="og:description" content="Easily schedule pet boarding, grooming, or training services in Udaipur with PetJunction. Fill out our quick inquiry form to get started!" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.petjunction.in/inquiry-form" />
+<meta property="og:site_name" content="PetJunction" />
+
+{/* <!-- Twitter --> */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Book Pet Boarding, Grooming & Training in Udaipur | PetJunction" />
+<meta name="twitter:description" content="Easily book your pet’s next service in Udaipur with PetJunction’s simple inquiry form." />
+      </Helmet>
+
+
+
       <div className="relative max-w-4xl mt-24 mx-auto p-8 bg-white rounded-xl shadow-lg overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">

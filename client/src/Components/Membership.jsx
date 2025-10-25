@@ -106,7 +106,8 @@ Please contact me to proceed with the subscription.
   };
 
   return (
-    <div className="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 via-white to-cyan-50/50 overflow-hidden">
+    <div className="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 via-white to-cyan-50/50 overflow-hidden mx-3 md
+    mx-0">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-40 sm:w-72 h-40 sm:h-72 bg-gradient-to-r from-cyan-300/10 to-blue-300/10 rounded-full blur-3xl animate-pulse"></div>

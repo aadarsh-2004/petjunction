@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Home, Shield, Heart, User, Dog, Cat } from 'lucide-react';
-import SEO from '../SEO';
+import { Helmet } from "react-helmet-async";
 
 const DogSitting = () => {
   useEffect(() => {
@@ -58,11 +58,29 @@ Could you provide more information about booking?`);
 
   return (
     <>
-      <SEO
-        title="Dog Sitting Services in Udaipur | At-Home Pet Care by PetJunction"
-        description="Professional dog sitting in Udaipur. PetJunction provides loving, reliable at-home pet care so your pets stay happy and stress-free."
-        canonical="https://www.petjunction.in/dogsitting"
-      />
+
+
+      <Helmet>
+        <title>Dog Sitting in Udaipur | At-Home Pet Care & Dog Walking by PetJunction</title>
+        <meta name="description" content="Looking for reliable dog sitting in Udaipur? PetJunction offers professional at-home dog care, walking, and pet sitting services for dogs and cats. Keep your pets happy, safe, and stress-free." />
+        <meta name="keywords" content="dog sitting Udaipur, professional dog sitter Udaipur, at-home pet care Udaipur, dog walking Udaipur, pet walking Udaipur, cat sitting Udaipur, pet sitting near me, dog sitter near me, pet care services Udaipur, pet care for dogs and cats" />
+        <link rel="canonical" href="https://www.petjunction.in/dog-sitting" />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:title" content="Dog Sitting in Udaipur | At-Home Pet Care & Dog Walking by PetJunction" />
+        <meta property="og:description" content="Looking for reliable dog sitting in Udaipur? PetJunction offers professional at-home dog care, walking, and pet sitting services for dogs and cats. Keep your pets happy, safe, and stress-free." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.petjunction.in/dog-sitting" />
+        {/* <meta property="og:image" content="https://www.petjunction.in/assets/images/dog-sitting-og.jpg" /> */}
+        <meta property="og:site_name" content="PetJunction" />
+
+        {/* <!-- Twitter Card --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Dog Sitting in Udaipur | At-Home Pet Care & Dog Walking by PetJunction" />
+        <meta name="twitter:description" content="Looking for reliable dog sitting in Udaipur? PetJunction offers professional at-home dog care, walking, and pet sitting services for dogs and cats. Keep your pets happy, safe, and stress-free." />
+        {/* <meta name="twitter:image" content="https://www.petjunction.in/assets/images/dog-sitting-og.jpg" /> */}
+        <meta name="twitter:site" content="@PetJunction" />
+      </Helmet>
       <div className="max-w-6xl mt-24 mx-auto p-6">
         {/* Hero Section */}
         <div className="text-center mb-12">
@@ -72,11 +90,11 @@ Could you provide more information about booking?`);
             </span>{" "}
             in Udaipur
           </h1>
-          
-           <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+
+          <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
             Find the perfect solution for your pet with our trusted<span className='font-bold  bg-gradient-to-r from-teal-500 to-emerald-600 text-transparent bg-clip-text'>dog sitting</span> for your pet with our professional <span className='font-bold'>pet care services in Udaipur</span> . We offer loving, in-home care for both dogs and cats.
           </p>
-          
+
         </div>
 
         {/* Services Grid */}
@@ -90,7 +108,7 @@ Could you provide more information about booking?`);
                 ₹{service.price}
                 <span className="text-lg text-gray-600">{service.priceUnit}</span>
               </p>
-              <button 
+              <button
                 onClick={() => bookViaWhatsApp(service.title, service.price)}
                 className="w-full bg-orange-600 text-white py-3 rounded-xl font-semibold hover:bg-orange-700 transition-colors shadow-md"
               >
@@ -124,7 +142,7 @@ Could you provide more information about booking?`);
           <p className="text-gray-200 mb-6">
             <span className="font-semibold">Give your dog a home away from home</span> and book a **pet service appointment** today.
           </p>
-          <button 
+          <button
             onClick={() => bookViaWhatsApp('Day Care', '500-6,000')}
             className="bg-white text-orange-800 py-3 px-6 rounded-xl font-semibold hover:bg-orange-100 transition-colors shadow-md"
           >

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Brush, ShowerHead, HandHeart, Scissors, Bug, Bath, PawPrint, Award, Star } from "lucide-react";
-import SEO from '../SEO';
+import { Helmet } from "react-helmet-async";
 
 const DogGrooming = () => {
   useEffect(() => {
@@ -67,7 +67,7 @@ Please help me schedule an appointment.`;
     const whatsappURL = `https://wa.me/${PHONE_NUMBER}?text=${encodedMessage}`;
     window.open(whatsappURL, '_blank');
   };
-  
+
   const features = [
     { icon: PawPrint, title: 'Expert Groomers', description: 'Our certified groomers provide gentle and compassionate care for your pet.', color: 'text-purple-500' },
     { icon: Award, title: 'Quality Products', description: 'We use professional, high-quality shampoos and conditioners for all pets.', color: 'text-orange-500' },
@@ -76,11 +76,32 @@ Please help me schedule an appointment.`;
 
   return (
     <>
-      <SEO
-        title="Dog Grooming in Udaipur | Dog & Cat Spa"
-        description="Looking for professional pet grooming in Udaipur? Our certified groomers offer dog grooming, cat grooming, and full-service pet spa packages. Book a pet service appointment today."
-        canonical="https://www.petjunction.in/doggrooming"
-      />
+
+
+      <Helmet>
+        <title>Dog Grooming in Udaipur | Dog & Cat Spa by PetJunction</title>
+        <meta name="description" content="Professional dog and cat grooming in Udaipur. PetJunction offers certified pet groomers, dog spa, cat spa, and full-service pet grooming packages. Keep your pets clean, happy, and healthy." />
+        <meta name="keywords" content="dog grooming Udaipur, cat grooming Udaipur, pet grooming Udaipur, dog spa Udaipur, cat spa Udaipur, professional pet grooming near me, pet grooming services Udaipur, pet salon Udaipur, dog grooming near me, cat grooming near me" />
+        <link rel="canonical" href="https://www.petjunction.in/dog-grooming" />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:title" content="Dog Grooming in Udaipur | Dog & Cat Spa by PetJunction" />
+        <meta property="og:description" content="Professional dog and cat grooming in Udaipur. PetJunction offers certified pet groomers, dog spa, cat spa, and full-service pet grooming packages. Keep your pets clean, happy, and healthy." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.petjunction.in/dog-grooming" />
+        {/* <meta property="og:image" content="https://www.petjunction.in/assets/images/dog-grooming-og.jpg" /> */}
+        <meta property="og:site_name" content="PetJunction" />
+
+        {/* <!-- Twitter Card --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Dog Grooming in Udaipur | Dog & Cat Spa by PetJunction" />
+        <meta name="twitter:description" content="Professional dog and cat grooming in Udaipur. PetJunction offers certified pet groomers, dog spa, cat spa, and full-service pet grooming packages. Keep your pets clean, happy, and healthy." />
+        {/* <meta name="twitter:image" content="https://www.petjunction.in/assets/images/dog-grooming-og.jpg" /> */}
+        <meta name="twitter:site" content="@PetJunction" />
+
+      </Helmet>
+
+
       <div className="relative max-w-6xl mt-24 mx-auto p-6">
         <div className="relative">
           <div className="text-center mb-12">
@@ -94,7 +115,7 @@ Please help me schedule an appointment.`;
               Treat your furry friend to a relaxing <span className="font-bold ">pet spa</span> day with our expert <span className="font-bold ">cat grooming</span> services. We are the top choice for <span className="font-bold ">professional dog grooming</span> and <span className="font-bold ">pet care specialists</span> in <span className="font-bold ">Udaipur</span>.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {features.map((feature, index) => (
               <div key={index} className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
@@ -121,7 +142,7 @@ Please help me schedule an appointment.`;
                   ₹{service.price}
                   <span className="text-lg text-gray-600">/session</span>
                 </p>
-                <button 
+                <button
                   className="w-full bg-pink-600 text-white py-3 rounded-xl hover:bg-pink-700 transition-colors shadow-md"
                   onClick={() => handleBooking(service)}
                 >
@@ -138,7 +159,7 @@ Please help me schedule an appointment.`;
             <p className="text-gray-200 mb-6">
               Give your pet a luxurious experience and book a **pet grooming in Udaipur** appointment.
             </p>
-            <button 
+            <button
               className="bg-white text-pink-800 py-3 px-6 rounded-xl font-semibold hover:bg-pink-100 transition-colors shadow-md"
               onClick={() => handleBooking(groomingServices[2])}
             >
